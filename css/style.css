@@ -1,0 +1,180 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url('../image/img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 20px;
+}
+
+/* inizio menu */
+
+.navbar{ 
+    overflow: hidden;
+    font-size: 120%;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.navbar:hover{
+    transition-property: background-color;
+    transition-duration: 1s;
+    background-color:rgba(0,0,0,0.7);
+}
+    
+.navbar-right{
+    height: auto;
+    float: right;
+}
+
+.navbar-left{
+    font-size: 90%;
+    padding-right: 5%;
+    float: left;
+}
+
+#menu > a {
+  float: left;
+  height: 100%;
+  font-size: 80%;
+  display: block;
+  color: white;
+  padding: 4.5% 20px;
+  text-decoration: none;
+}
+
+#menu > a:hover {
+  background-color: #111;
+
+}
+
+/* fine menu */
+
+.center{
+    text-align: center;
+}
+
+.max-width{
+    width: 100%;
+}
+
+/* definizione colori */
+
+.bgblack{
+    background-color:rgba(0,0,0,0.5);   
+}
+
+.bgwhite{
+    background-color:rgba(255,255,255,0.9);
+}
+
+.bggrey{
+    background-color:rgba(187, 187, 187, 0.9);
+}
+
+/* fine definizione colori */
+
+/* definizione titoli */
+
+h1{
+    font-size: 180%; 
+    color: white;
+}
+
+h2{
+    margin-bottom: 3%;
+}
+
+h3{
+    color: white;
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+/* fine definizione titoli */
+
+.one{
+    background-color:blue;
+}
+.two{
+    background-color:yellow;
+}
+.three{
+    background-color:black;
+}
+
+.box{
+    padding: 5%;
+}
+
+.mt{
+    margin-top: 2%;
+    
+}
+
+input[type=submit]{
+    cursor:pointer;
+    text-align: center;
+    width: 30%;
+    color: black;
+    border: 0 none;
+    border-radius: 5px;
+    padding: 2.1% 15px;
+}
+
+input[type=button]{
+    cursor:pointer;
+    text-align: center;
+    width: 30%;
+    color: white;
+    border: 0 none;
+    border-radius: 5px;
+    padding: 2.1% 15px;
+}
+
+input[type=text]{
+    width: 40%;
+    height: 32px;
+    line-height:32px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+input[type=password]{
+    width: 40%;
+    height: 32px;
+    line-height:32px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+table{
+    margin:0px auto;
+    margin-bottom: 5%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+td{
+    width: 20%;
+    margin-bottom: 3%;
+}
+
+td > select{
+    width: 60%;
+}
+
+td > textarea {
+    width: 60%;
+    height: 50px;
+}
+
+select{
+    width: 30%;
+    height: 32px;
+    line-height:32px;
+    
+}
