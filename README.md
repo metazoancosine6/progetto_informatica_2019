@@ -14,5 +14,4 @@ Lista delle cose da fare:
   - gestire fattura
   - commentare il codice
   - collegare pagine
-  
-porcodio
+ 
