@@ -14,6 +14,7 @@ Lista delle cose da fare:
   - gestire fattura
   - commentare il codice
   - collegare pagine
+  - Modifica ed elimina cliente (compito amministrazione)
   
 progetti futuri:
   - bootstrap per css in futuro 
