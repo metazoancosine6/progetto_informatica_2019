@@ -56,8 +56,8 @@ dove il nome dell'intervento è uguale al nome dell'intervento selezionato*/
     $ris2 = $myconn->query($view2);
 
     if(!$ris){
-      echo false;
+      echo "Errore nell'inserimento!";
     }else{
-      echo true;
+      echo "Inserimento eseguito con successo!";
     }
 ?>

@@ -85,9 +85,7 @@ and open the template in the editor.
                 <input type='submit' value='esci' name='esci'>
                 <?php
                 if(isset($_POST["esci"])){
-                    session_unset();
-                    session_destroy();
-                     header("Refresh:0; url=index.php");
+                    logout();
                 }
                 ?>
             </form>

@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
+        <?php
+            include("utils.php");
+            createNavBar();
+        
+        ?>
         <script>
             //Funzione che richiama search.php e gli passa la targa del veicolo selezionato
             function cercaNomeInter() {
@@ -36,15 +41,26 @@
                 var targa = document.getElementById("targa").innerHTML;
                 var intervento = document.getElementById("scelta").value;
                 var quantita = document.getElementById("quantita").value;
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("output").innerHTML = this.responseText;
+                    }
+                }
 
                 xhttp.open("GET", "insert.php?nome="+nome+"&targa="+targa+"&intervento="+intervento+"&quantita="+quantita, true);
                 xhttp.send();
             }
         </script>
+
+    <link rel="stylesheet" href="../css/style.css"  > 
     </head>
+
     <body onload="cercaNomeInter(); costo()">
+
+        <div class="bggrey">
+
     <center>
-        <h1>Inserire prodotto</h1>
+        <h1 class = "bgblack">Inserire prodotto</h1>
         <?php
         $targa = $_GET["targa"];
         echo "<table>";
@@ -67,7 +83,6 @@
                     <td>
                         <?php
                         //Si crea una select con i nomi dei prodtti registrati nel database
-                        include ("utils.php");
                         $myconn = connect();
 
                         $query = "SELECT nome_prod "
@@ -107,8 +122,10 @@
                     </td>
                 </tr>
             </table>
-            <a href="meccanicoOperazioni.php"><input type="button" onclick="inserisci()" value="Inserisci"></a>
+            <input type="button" class="bgblack" onclick="inserisci()" value="Inserisci">
+            <p id="output"></p>
         </form>
     </center>
+</div>
 </body>
 </html>

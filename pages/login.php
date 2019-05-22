@@ -107,8 +107,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
 
             $_SESSION["username"] = $username;
+            $_SESSION['privilegi'] = $privilegio;
+            
             echo "login riuscito!";
             echo $_SESSION["username"];
+
             header("Refresh:0; url=AccessoRiuscito.php");
             //header("Refresh:0");
         }
