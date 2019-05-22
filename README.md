@@ -15,6 +15,21 @@ Lista delle cose da fare:
   - commentare il codice
   - collegare pagine
   - Modifica ed elimina cliente (compito amministrazione)
+ 
+Pagine mancanti:
+  Utenza Amministratore
+    -Modifica Dati Meccanico
+    -Cancella Prodotto
+    -Modifica Prodotto
+    -Modifica Cliente
+    -Cancella Cliente
+  Utenza Meccanico
+    -Modifica Dati Veicolo
+    -Cancella Veicolo
+  Utenza Cliente
+    -Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)
   
 progetti futuri:
-  - bootstrap per css in futuro 
+  - bootstrap per css 
+
+CONTROLLATE CHE LE PASS CHE VIAGGIONO TRAMITE URL E VENGONO SALVATE SIANO IN MD5
