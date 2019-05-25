@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2019 at 11:53 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Creato il: Mag 25, 2019 alle 16:22
+-- Versione del server: 10.1.37-MariaDB
+-- Versione PHP: 5.6.39
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `amministratore`
+-- Struttura della tabella `amministratore`
 --
 
 CREATE TABLE `amministratore` (
@@ -37,7 +37,7 @@ CREATE TABLE `amministratore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `amministratore`
+-- Dump dei dati per la tabella `amministratore`
 --
 
 INSERT INTO `amministratore` (`idAmministratore`, `username`, `password`, `nome`, `cognome`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `amministratore` (`idAmministratore`, `username`, `password`, `nome`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anagrafica_intervento`
+-- Struttura della tabella `anagrafica_intervento`
 --
 
 CREATE TABLE `anagrafica_intervento` (
@@ -57,7 +57,7 @@ CREATE TABLE `anagrafica_intervento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `anagrafica_intervento`
+-- Dump dei dati per la tabella `anagrafica_intervento`
 --
 
 INSERT INTO `anagrafica_intervento` (`id_anagrafico`, `nome_intervento`, `costo_intervento`, `tempo_lavorazione`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `anagrafica_intervento` (`id_anagrafico`, `nome_intervento`, `costo_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cliente`
+-- Struttura della tabella `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -87,120 +87,120 @@ CREATE TABLE `cliente` (
   `cap` char(5) NOT NULL,
   `via` varchar(25) NOT NULL,
   `civico` int(3) NOT NULL,
-  `telefono` char(10) DEFAULT NULL,
-  `email` varchar(25) NOT NULL
+  `telefono` varchar(10) DEFAULT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cliente`
+-- Dump dei dati per la tabella `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `data_nascita`, `cod_fisc`, `cognome`, `nome`, `cap`, `via`, `civico`, `telefono`, `email`) VALUES
-(201, '1976-11-10', 'ACOZAD28X17H929A', 'Fusco', 'Luca', '44458', '929-5483 Vulputate Rd.', 352, '', ''),
-(202, '1959-09-30', 'GRZPTR06I78H511S', 'Greco', 'Nicolò', '61963', 'Ap #733-1335 Lacus. St.', 124, '', ''),
-(203, '1969-09-01', 'KKOLPQ76B84Q574S', 'Parisi', 'Dario', '24146', '9937 Magna. Ave', 464, '', ''),
-(204, '1990-01-09', 'WVJIDW73A61X952I', 'Grasso', 'Giacomo', '27208', 'P.O. Box 164, 8015 Mi Av.', 203, '', ''),
-(205, '1994-07-21', 'HRISED63Z87Y966J', 'Milani', 'Emma', '56449', 'Ap #123-6660 Mauris. Av.', 43, '', ''),
-(206, '1960-03-01', 'DIWZVX68C45B873Q', 'Poli', 'Luigi', '60517', 'P.O. Box 656, 6397 Tortor', 406, '', ''),
-(207, '1988-10-22', 'KVGQUC23W93P752N', 'Pace', 'Nicolò', '18517', '4243 Etiam St.', 292, '', ''),
-(208, '1996-09-02', 'LCEYGP06O09B165F', 'Bernardi', 'Irene', '92347', '171-5209 Tempor Ave', 74, '', ''),
-(209, '1979-06-14', 'ORPQES47H07X969W', 'Pastore', 'Giulio', '62597', '3707 Lectus St.', 9, '', ''),
-(210, '1916-01-15', 'ZNERBC45Q36F324M', 'Moro', 'Gabriele', '60641', '8164 Quisque St.', 307, '', ''),
-(211, '1915-11-09', 'HURSIN10B67K954Z', 'Parisi', 'Andrea', '07462', '1953 Velit Rd.', 304, '', ''),
-(212, '1953-05-07', 'QDCRBQ75Q50J522G', 'Grasso', 'Davide', '77084', 'Ap #915-5915 Lacus Road', 324, '', ''),
-(213, '1962-06-19', 'NXNGJB60X04B242T', 'Fontana', 'Gianni', '50314', 'P.O. Box 937, 3517 Vel, A', 301, '', ''),
-(214, '1996-03-15', 'QASGGB12B09J493X', 'Pellegrino', 'Ilaria', '97717', '702-1173 Habitant St.', 55, '', ''),
-(215, '1919-07-19', 'WKSQAE00K35K819P', 'Pepe', 'Valentina', '78910', '364-9420 Duis Av.', 131, '', ''),
-(216, '1938-12-14', 'EVSMZU93U84C996O', 'Rinaldi', 'Francesco', '63652', '283 Blandit Rd.', 315, '', ''),
-(217, '1958-09-05', 'KVWJHZ39N53O866K', 'Barone', 'Antonio', '47249', '498-1394 Pretium St.', 356, '', ''),
-(218, '1916-10-28', 'GBXJSC99G40Q033H', 'Pagano', 'Davide', '76537', '974-6880 Habitant Rd.', 28, '', ''),
-(219, '1938-02-24', 'OPVDLI63N51X830C', 'Ferrari', 'Giorgio', '05392', 'Ap #435-5674 Nunc. Avenue', 243, '', ''),
-(220, '1920-07-04', 'WFDSYA91G69R143M', 'Moretti', 'Fabio', '80414', 'Ap #464-334 Amet Av.', 12, '', ''),
-(221, '1984-12-06', 'XVEGNZ94L02E903Y', 'Marchi', 'Roberto', '81144', 'P.O. Box 775, 4313 Phasel', 156, '', ''),
-(222, '1975-10-16', 'RMXVJZ41R71P376H', 'Barone', 'Mario', '81765', '635-7741 Vitae, Ave', 429, '', ''),
-(223, '1992-11-23', 'ZPOHCJ71F70V030M', 'Garofalo', 'Gianpiero', '27362', '353-2243 Risus St.', 448, '', ''),
-(224, '1988-01-12', 'QGUIGS75O96U133D', 'Baldi', 'Nicoletta', '42092', 'P.O. Box 136, 9407 Non Av', 178, '', ''),
-(225, '2000-04-05', 'HLZEZN53I57U801I', 'Gentile', 'Stefania', '59204', 'Ap #101-3725 Arcu St.', 107, '', ''),
-(226, '1936-10-14', 'FRQBYH05A21U560Q', 'Marini', 'Armando', '99320', '568-6339 Nisi Rd.', 440, '', ''),
-(227, '1962-06-01', 'RXVFCM99Y24Q529T', 'Sorrentino', 'Debora', '47764', 'P.O. Box 843, 4446 Lobort', 484, '', ''),
-(228, '1984-10-16', 'NZHAYF82J28N876E', 'Gallo', 'Manuel', '53942', 'Ap #206-9256 Nullam Avenu', 197, '', ''),
-(229, '1969-04-29', 'VKCIKX17W67H714I', 'Perrone', 'Gaia', '15053', 'Ap #433-1378 Lectus St.', 390, '', ''),
-(230, '1988-11-29', 'HUHASU32A02N598N', 'Antonelli', 'Rebecca', '30048', 'Ap #846-648 Sed St.', 476, '', ''),
-(231, '1926-12-07', 'FXGLJM40X09F665Y', 'Di Stefano', 'Marta', '28439', 'Ap #941-5564 Vitae St.', 267, '', ''),
-(232, '1972-04-02', 'RLNFJG22Q62V840G', 'Sanna', 'Alex', '46008', '433-1562 Ac Ave', 361, '', ''),
-(233, '1946-07-05', 'IXVKCD40I44U485Y', 'Perrone', 'Edoardo', '50294', 'Ap #188-4109 Mauris St.', 182, '', ''),
-(234, '1919-10-06', 'DIHHDF78F11T047T', 'Bianco', 'Riccardo', '21364', '561-5209 Nullam Ave', 397, '', ''),
-(235, '1985-03-18', 'CKIAQG31C13I482G', 'Fumagalli', 'Anna', '09695', 'P.O. Box 707, 9422 Cursus', 441, '', ''),
-(236, '1966-01-24', 'PCYYSB51D86Z515T', 'Messina', 'Tommaso', '62954', '9472 Luctus Ave', 283, '', ''),
-(237, '1975-05-25', 'KVLWJJ67N34W260H', 'Ceccarelli', 'Gianpiero', '63748', '8241 Arcu. Rd.', 125, '', ''),
-(238, '1976-04-02', 'ROXCTW45U02C992S', 'Palmieri', 'Camilla', '73812', 'P.O. Box 501, 1975 Fringi', 297, '', ''),
-(239, '1999-02-02', 'SMTEUI40L61B692J', 'Vitali', 'Augusto', '49130', 'P.O. Box 977, 1846 Euismo', 305, '', ''),
-(240, '1933-11-27', 'KHJJJP09B79E445J', 'Arena', 'Federica', '01210', '802-8766 Sed Rd.', 409, '', ''),
-(241, '1936-03-19', 'BMXFRD39U99O507B', 'Ferrari', 'Giada', '07812', 'Ap #784-6629 Malesuada St', 443, '', ''),
-(242, '1970-07-27', 'SFOAJH50K45U622X', 'Romeo', 'Alice', '50081', '5957 Luctus. Avenue', 46, '', ''),
-(243, '1920-02-20', 'CKBOFY65G62W781X', 'Marchetti', 'Vanessa', '95947', '4119 Suspendisse St.', 485, '', ''),
-(244, '1948-10-15', 'IDHHPG28W52Q804L', 'Calabrese', 'Erica', '84866', 'Ap #771-8677 Ipsum. Road', 413, '', ''),
-(245, '1957-03-13', 'THHFNH94K03R672U', 'Fontana', 'Armando', '54493', 'Ap #164-1028 Nec Av.', 213, '', ''),
-(246, '1983-01-22', 'PWDUKU64V19W414O', 'Monti', 'Paola', '83122', '3552 Nec Rd.', 431, '', ''),
-(247, '1940-02-03', 'MCFGBJ37D99H785F', 'Milani', 'Riccardo', '24009', 'P.O. Box 756, 4726 Purus ', 367, '', ''),
-(248, '1945-05-11', 'NFNSHT98G93X400I', 'Conti', 'Giorgia', '94902', 'Ap #573-6910 Est. Avenue', 483, '', ''),
-(249, '1916-02-17', 'TQDXJT13Z15G715C', 'Barone', 'Enrico', '84251', 'Ap #239-7888 Montes, Rd.', 264, '', ''),
-(250, '1975-05-17', 'FFHCZE49O49Y986Z', 'Conte', 'Giuseppe', '51684', 'Ap #614-8227 Id, Road', 201, '', ''),
-(251, '1980-04-24', 'YAUACG25J21G961B', 'Morelli', 'Francesco', '57816', 'Ap #625-936 Maecenas Stre', 237, '', ''),
-(252, '1917-02-09', 'RVSKPK19D23U146H', 'Vitali', 'Aurora', '77234', '349-9227 Dolor. Rd.', 49, '', ''),
-(253, '1916-12-15', 'RHPPQA90Y54E176C', 'Rizzo', 'Giuseppe', '67812', '1893 Consequat Road', 244, '', ''),
-(254, '1988-10-18', 'QQLSVS81X77I797T', 'Serra', 'Enrico', '38496', 'P.O. Box 124, 8655 Nulla.', 158, '', ''),
-(255, '1924-03-08', 'IKNWDQ04C84V082U', 'Agostini', 'Giorgio', '14935', 'P.O. Box 384, 6041 Elit. ', 413, '', ''),
-(256, '1959-04-23', 'RXYITA59P49M994Q', 'Albanese', 'Nicola', '22714', '365-4573 Ipsum Street', 335, '', ''),
-(257, '1934-08-13', 'VZBDBC62I81G305G', 'Volpe', 'Ilaria', '24131', '6388 At, St.', 316, '', ''),
-(258, '1917-03-25', 'YYZSPM36B15E879O', 'Napolitano', 'Enrico', '79873', '471 Ac Road', 206, '', ''),
-(259, '1982-02-10', 'ICBWNZ30M50K949W', 'Marra', 'Manuel', '05729', '867-9740 Nunc, St.', 235, '', ''),
-(260, '1924-08-26', 'CTZGBP17W20V572A', 'Carbone', 'Emma', '63988', '772-5840 Lacus. Ave', 184, '', ''),
-(261, '1978-05-22', 'YRBVDR60N17F522H', 'Mele', 'Cristiano', '37506', 'Ap #791-7504 Nisi. Avenue', 449, '', ''),
-(262, '1922-12-09', 'UPQDHH56B66H639N', 'Lorusso', 'Federica', '05692', '6052 Bibendum Av.', 322, '', ''),
-(263, '1943-08-30', 'LLQGMX97Z32S554Y', 'Proietti', 'Emanuele', '79359', 'Ap #396-8147 Mi Street', 373, '', ''),
-(264, '1930-01-24', 'DVKINE60J17Z677E', 'Ferrante', 'Jessica', '08437', '5959 Nec, Avenue', 346, '', ''),
-(265, '1954-11-12', 'MEHCSV12F55C586K', 'Proietti', 'Nicole', '69951', '614-6843 Faucibus Av.', 337, '', ''),
-(266, '1941-09-02', 'FMQCAE54N10G418V', 'Pinna', 'Roberta', '95523', '3739 Tristique Av.', 329, '', ''),
-(267, '1991-09-25', 'SWTXJE31C46U839E', 'De Angelis', 'Vincenzo', '82669', 'Ap #914-3768 Donec Street', 405, '', ''),
-(268, '1958-01-25', 'WGGALO09N06F580R', 'Martino', 'Samuel', '61830', '699-411 Euismod Street', 222, '', ''),
-(269, '1983-09-14', 'ZOTBMK63Q80P281C', 'Gatti', 'Vittoria', '32764', '540-3386 Vitae Av.', 54, '', ''),
-(270, '1985-12-30', 'RNGNGQ22N04P634K', 'Volpe', 'Maria', '82925', '9402 Faucibus Ave', 78, '', ''),
-(271, '1919-12-05', 'CPDTBZ70Y12I164T', 'Villani', 'Debora', '83496', '1358 Dolor St.', 365, '', ''),
-(272, '1924-03-23', 'GYFYKF83X53X560S', 'Ruggeri', 'Martina', '68615', 'Ap #585-6609 Massa Ave', 377, '', ''),
-(273, '1958-12-18', 'KRIOEM26B63R875F', 'Martino', 'Claudio', '87942', '814-574 Lacus Road', 423, '', ''),
-(274, '1966-07-02', 'DHAONA99R95D659O', 'Sala', 'Sofia', '92131', '892-5065 Lectus Street', 217, '', ''),
-(275, '1950-11-20', 'DILAKJ78D02I189U', 'Olivieri', 'Domenico', '56352', 'P.O. Box 100, 1349 Gravid', 60, '', ''),
-(276, '1957-12-25', 'XILRUZ55N39K015F', 'Ferrero', 'Giacomo', '69082', '772-6284 Eleifend. Avenue', 4, '', ''),
-(277, '1986-06-05', 'YACFZN89V84O872L', 'Ferro', 'Lucia', '70427', 'P.O. Box 466, 2176 Orci A', 415, '', ''),
-(278, '1939-02-18', 'BTPWJW62X10I296S', 'Messina', 'Sofia', '81367', '3462 Placerat. Avenue', 84, '', ''),
-(279, '1990-03-18', 'JNFIKH04G12W790N', 'Vitale', 'Valeria', '81495', 'P.O. Box 406, 3203 Netus ', 188, '', ''),
-(280, '1925-01-13', 'YFKBYR67K30M918H', 'Albanese', 'Greta', '43629', 'Ap #842-7751 Justo St.', 294, '', ''),
-(281, '1975-08-25', 'QTIWIO21F50C931N', 'Parisi', 'Giovanni', '29129', 'P.O. Box 806, 5997 In Rd.', 32, '', ''),
-(282, '1968-06-10', 'AHEYPV60C29V530M', 'Pellegrino', 'Gianni', '87583', 'P.O. Box 882, 1829 Odio. ', 445, '', ''),
-(283, '1935-09-06', 'RXDHAG92C70P013W', 'Orlando', 'Enrico', '78804', 'P.O. Box 184, 3824 Tellus', 119, '', ''),
-(284, '1983-02-07', 'ZQGVOE13Z97T231O', 'Greco', 'Nicole', '74116', '5193 Diam. Av.', 371, '', ''),
-(285, '1933-07-26', 'UPGIEB70M12N567M', 'Ferri', 'Lucio', '47716', 'P.O. Box 329, 8297 Ornare', 175, '', ''),
-(286, '1956-02-17', 'GTJSIS55H58X336Y', 'Marra', 'Jessica', '98104', '573-1926 Sed Road', 167, '', ''),
-(287, '1934-01-28', 'LNSWCK25Z76J273P', 'Marini', 'Claudio', '36566', 'P.O. Box 872, 7729 Ligula', 102, '', ''),
-(288, '1997-04-20', 'ZZMGLR51M71T855S', 'Amato', 'Lisa', '16669', '540 Rutrum Avenue', 234, '', ''),
-(289, '1983-03-14', 'ZXWSWR26S72T916L', 'Barbieri', 'Elena', '61732', '4130 Velit Avenue', 74, '', ''),
-(290, '1969-02-08', 'MCSVVM07S95U830B', 'Piazza', 'Gabriele', '01723', 'P.O. Box 296, 8446 Nulla ', 238, '', ''),
-(291, '1939-06-18', 'GNQDWT03C98T311P', 'Rizzi', 'Camilla', '54583', 'Ap #477-5862 Vitae Avenue', 488, '', ''),
-(292, '1990-11-25', 'JXHZQN27Z91Q515S', 'Russo', 'Salvatore', '79705', '9843 Phasellus St.', 240, '', ''),
-(293, '1944-07-10', 'DXFVAG97M85K728Y', 'Brambilla', 'Tommaso', '14204', 'P.O. Box 556, 6913 Sapien', 449, '', ''),
-(294, '1954-01-19', 'NSDZRK51Q92D921V', 'De Santis', 'Nicola', '71714', '5168 Cum Rd.', 275, '', ''),
-(295, '1968-01-04', 'DXVCES39E88G309D', 'Testa', 'Matilde', '64963', 'P.O. Box 986, 7668 Facili', 202, '', ''),
-(296, '1991-03-24', 'NVFXCT05I81O468A', 'Ferrara', 'Luigi', '12686', '649-5662 Cras Avenue', 169, '', ''),
-(297, '1928-01-27', 'UTFVAF02X46T959V', 'Bruni', 'Rebecca', '25927', '8142 Et Av.', 68, '', ''),
-(298, '1930-10-18', 'YIJSQY42S68G871U', 'Pinna', 'Luigi', '29660', '3995 Enim Rd.', 356, '', ''),
-(299, '1935-10-04', 'HSRIQD24P79C943X', 'Ferretti', 'Roberta', '43237', 'P.O. Box 394, 495 Neque S', 33, '', ''),
-(300, '1955-08-15', 'VHCLDH74S59G012C', 'Battaglia', 'Lucia', '02669', 'Ap #708-7093 Nonummy Stre', 476, '', '');
+(201, '1976-11-10', 'ACOZAD28X17H929A', 'Fusco', 'Luca', '44458', '929-5483 Vulputate Rd.', 352, NULL, ''),
+(202, '1959-09-30', 'GRZPTR06I78H511S', 'Greco', 'Nicolò', '61963', 'Ap #733-1335 Lacus. St.', 124, NULL, ''),
+(203, '1969-09-01', 'KKOLPQ76B84Q574S', 'Parisi', 'Dario', '24146', '9937 Magna. Ave', 464, NULL, ''),
+(204, '1990-01-09', 'WVJIDW73A61X952I', 'Grasso', 'Giacomo', '27208', 'P.O. Box 164, 8015 Mi Av.', 203, NULL, ''),
+(205, '1994-07-21', 'HRISED63Z87Y966J', 'Milani', 'Emma', '56449', 'Ap #123-6660 Mauris. Av.', 43, NULL, ''),
+(206, '1960-03-01', 'DIWZVX68C45B873Q', 'Poli', 'Luigi', '60517', 'P.O. Box 656, 6397 Tortor', 406, NULL, ''),
+(207, '1988-10-22', 'KVGQUC23W93P752N', 'Pace', 'Nicolò', '18517', '4243 Etiam St.', 292, NULL, ''),
+(208, '1996-09-02', 'LCEYGP06O09B165F', 'Bernardi', 'Irene', '92347', '171-5209 Tempor Ave', 74, NULL, ''),
+(209, '1979-06-14', 'ORPQES47H07X969W', 'Pastore', 'Giulio', '62597', '3707 Lectus St.', 9, NULL, ''),
+(210, '1916-01-15', 'ZNERBC45Q36F324M', 'Moro', 'Gabriele', '60641', '8164 Quisque St.', 307, NULL, ''),
+(211, '1915-11-09', 'HURSIN10B67K954Z', 'Parisi', 'Andrea', '07462', '1953 Velit Rd.', 304, NULL, ''),
+(212, '1953-05-07', 'QDCRBQ75Q50J522G', 'Grasso', 'Davide', '77084', 'Ap #915-5915 Lacus Road', 324, NULL, ''),
+(213, '1962-06-19', 'NXNGJB60X04B242T', 'Fontana', 'Gianni', '50314', 'P.O. Box 937, 3517 Vel, A', 301, NULL, ''),
+(214, '1996-03-15', 'QASGGB12B09J493X', 'Pellegrino', 'Ilaria', '97717', '702-1173 Habitant St.', 55, NULL, ''),
+(215, '1919-07-19', 'WKSQAE00K35K819P', 'Pepe', 'Valentina', '78910', '364-9420 Duis Av.', 131, NULL, ''),
+(216, '1938-12-14', 'EVSMZU93U84C996O', 'Rinaldi', 'Francesco', '63652', '283 Blandit Rd.', 315, NULL, ''),
+(217, '1958-09-05', 'KVWJHZ39N53O866K', 'Barone', 'Antonio', '47249', '498-1394 Pretium St.', 356, NULL, ''),
+(218, '1916-10-28', 'GBXJSC99G40Q033H', 'Pagano', 'Davide', '76537', '974-6880 Habitant Rd.', 28, NULL, ''),
+(219, '1938-02-24', 'OPVDLI63N51X830C', 'Ferrari', 'Giorgio', '05392', 'Ap #435-5674 Nunc. Avenue', 243, NULL, ''),
+(220, '1920-07-04', 'WFDSYA91G69R143M', 'Moretti', 'Fabio', '80414', 'Ap #464-334 Amet Av.', 12, NULL, ''),
+(221, '1984-12-06', 'XVEGNZ94L02E903Y', 'Marchi', 'Roberto', '81144', 'P.O. Box 775, 4313 Phasel', 156, NULL, ''),
+(222, '1975-10-16', 'RMXVJZ41R71P376H', 'Barone', 'Mario', '81765', '635-7741 Vitae, Ave', 429, NULL, ''),
+(223, '1992-11-23', 'ZPOHCJ71F70V030M', 'Garofalo', 'Gianpiero', '27362', '353-2243 Risus St.', 448, NULL, ''),
+(224, '1988-01-12', 'QGUIGS75O96U133D', 'Baldi', 'Nicoletta', '42092', 'P.O. Box 136, 9407 Non Av', 178, NULL, ''),
+(225, '2000-04-05', 'HLZEZN53I57U801I', 'Gentile', 'Stefania', '59204', 'Ap #101-3725 Arcu St.', 107, NULL, ''),
+(226, '1936-10-14', 'FRQBYH05A21U560Q', 'Marini', 'Armando', '99320', '568-6339 Nisi Rd.', 440, NULL, ''),
+(227, '1962-06-01', 'RXVFCM99Y24Q529T', 'Sorrentino', 'Debora', '47764', 'P.O. Box 843, 4446 Lobort', 484, NULL, ''),
+(228, '1984-10-16', 'NZHAYF82J28N876E', 'Gallo', 'Manuel', '53942', 'Ap #206-9256 Nullam Avenu', 197, NULL, ''),
+(229, '1969-04-29', 'VKCIKX17W67H714I', 'Perrone', 'Gaia', '15053', 'Ap #433-1378 Lectus St.', 390, NULL, ''),
+(230, '1988-11-29', 'HUHASU32A02N598N', 'Antonelli', 'Rebecca', '30048', 'Ap #846-648 Sed St.', 476, NULL, ''),
+(231, '1926-12-07', 'FXGLJM40X09F665Y', 'Di Stefano', 'Marta', '28439', 'Ap #941-5564 Vitae St.', 267, NULL, ''),
+(232, '1972-04-02', 'RLNFJG22Q62V840G', 'Sanna', 'Alex', '46008', '433-1562 Ac Ave', 361, NULL, ''),
+(233, '1946-07-05', 'IXVKCD40I44U485Y', 'Perrone', 'Edoardo', '50294', 'Ap #188-4109 Mauris St.', 182, NULL, ''),
+(234, '1919-10-06', 'DIHHDF78F11T047T', 'Bianco', 'Riccardo', '21364', '561-5209 Nullam Ave', 397, NULL, ''),
+(235, '1985-03-18', 'CKIAQG31C13I482G', 'Fumagalli', 'Anna', '09695', 'P.O. Box 707, 9422 Cursus', 441, NULL, ''),
+(236, '1966-01-24', 'PCYYSB51D86Z515T', 'Messina', 'Tommaso', '62954', '9472 Luctus Ave', 283, NULL, ''),
+(237, '1975-05-25', 'KVLWJJ67N34W260H', 'Ceccarelli', 'Gianpiero', '63748', '8241 Arcu. Rd.', 125, NULL, ''),
+(238, '1976-04-02', 'ROXCTW45U02C992S', 'Palmieri', 'Camilla', '73812', 'P.O. Box 501, 1975 Fringi', 297, NULL, ''),
+(239, '1999-02-02', 'SMTEUI40L61B692J', 'Vitali', 'Augusto', '49130', 'P.O. Box 977, 1846 Euismo', 305, NULL, ''),
+(240, '1933-11-27', 'KHJJJP09B79E445J', 'Arena', 'Federica', '01210', '802-8766 Sed Rd.', 409, NULL, ''),
+(241, '1936-03-19', 'BMXFRD39U99O507B', 'Ferrari', 'Giada', '07812', 'Ap #784-6629 Malesuada St', 443, NULL, ''),
+(242, '1970-07-27', 'SFOAJH50K45U622X', 'Romeo', 'Alice', '50081', '5957 Luctus. Avenue', 46, NULL, ''),
+(243, '1920-02-20', 'CKBOFY65G62W781X', 'Marchetti', 'Vanessa', '95947', '4119 Suspendisse St.', 485, NULL, ''),
+(244, '1948-10-15', 'IDHHPG28W52Q804L', 'Calabrese', 'Erica', '84866', 'Ap #771-8677 Ipsum. Road', 413, NULL, ''),
+(245, '1957-03-13', 'THHFNH94K03R672U', 'Fontana', 'Armando', '54493', 'Ap #164-1028 Nec Av.', 213, NULL, ''),
+(246, '1983-01-22', 'PWDUKU64V19W414O', 'Monti', 'Paola', '83122', '3552 Nec Rd.', 431, NULL, ''),
+(247, '1940-02-03', 'MCFGBJ37D99H785F', 'Milani', 'Riccardo', '24009', 'P.O. Box 756, 4726 Purus ', 367, NULL, ''),
+(248, '1945-05-11', 'NFNSHT98G93X400I', 'Conti', 'Giorgia', '94902', 'Ap #573-6910 Est. Avenue', 483, NULL, ''),
+(249, '1916-02-17', 'TQDXJT13Z15G715C', 'Barone', 'Enrico', '84251', 'Ap #239-7888 Montes, Rd.', 264, NULL, ''),
+(250, '1975-05-17', 'FFHCZE49O49Y986Z', 'Conte', 'Giuseppe', '51684', 'Ap #614-8227 Id, Road', 201, NULL, ''),
+(251, '1980-04-24', 'YAUACG25J21G961B', 'Morelli', 'Francesco', '57816', 'Ap #625-936 Maecenas Stre', 237, NULL, ''),
+(252, '1917-02-09', 'RVSKPK19D23U146H', 'Vitali', 'Aurora', '77234', '349-9227 Dolor. Rd.', 49, NULL, ''),
+(253, '1916-12-15', 'RHPPQA90Y54E176C', 'Rizzo', 'Giuseppe', '67812', '1893 Consequat Road', 244, NULL, ''),
+(254, '1988-10-18', 'QQLSVS81X77I797T', 'Serra', 'Enrico', '38496', 'P.O. Box 124, 8655 Nulla.', 158, NULL, ''),
+(255, '1924-03-08', 'IKNWDQ04C84V082U', 'Agostini', 'Giorgio', '14935', 'P.O. Box 384, 6041 Elit. ', 413, NULL, ''),
+(256, '1959-04-23', 'RXYITA59P49M994Q', 'Albanese', 'Nicola', '22714', '365-4573 Ipsum Street', 335, NULL, ''),
+(257, '1934-08-13', 'VZBDBC62I81G305G', 'Volpe', 'Ilaria', '24131', '6388 At, St.', 316, NULL, ''),
+(258, '1917-03-25', 'YYZSPM36B15E879O', 'Napolitano', 'Enrico', '79873', '471 Ac Road', 206, NULL, ''),
+(259, '1982-02-10', 'ICBWNZ30M50K949W', 'Marra', 'Manuel', '05729', '867-9740 Nunc, St.', 235, NULL, ''),
+(260, '1924-08-26', 'CTZGBP17W20V572A', 'Carbone', 'Emma', '63988', '772-5840 Lacus. Ave', 184, NULL, ''),
+(261, '1978-05-22', 'YRBVDR60N17F522H', 'Mele', 'Cristiano', '37506', 'Ap #791-7504 Nisi. Avenue', 449, NULL, ''),
+(262, '1922-12-09', 'UPQDHH56B66H639N', 'Lorusso', 'Federica', '05692', '6052 Bibendum Av.', 322, NULL, ''),
+(263, '1943-08-30', 'LLQGMX97Z32S554Y', 'Proietti', 'Emanuele', '79359', 'Ap #396-8147 Mi Street', 373, NULL, ''),
+(264, '1930-01-24', 'DVKINE60J17Z677E', 'Ferrante', 'Jessica', '08437', '5959 Nec, Avenue', 346, NULL, ''),
+(265, '1954-11-12', 'MEHCSV12F55C586K', 'Proietti', 'Nicole', '69951', '614-6843 Faucibus Av.', 337, NULL, ''),
+(266, '1941-09-02', 'FMQCAE54N10G418V', 'Pinna', 'Roberta', '95523', '3739 Tristique Av.', 329, NULL, ''),
+(267, '1991-09-25', 'SWTXJE31C46U839E', 'De Angelis', 'Vincenzo', '82669', 'Ap #914-3768 Donec Street', 405, NULL, ''),
+(268, '1958-01-25', 'WGGALO09N06F580R', 'Martino', 'Samuel', '61830', '699-411 Euismod Street', 222, NULL, ''),
+(269, '1983-09-14', 'ZOTBMK63Q80P281C', 'Gatti', 'Vittoria', '32764', '540-3386 Vitae Av.', 54, NULL, ''),
+(270, '1985-12-30', 'RNGNGQ22N04P634K', 'Volpe', 'Maria', '82925', '9402 Faucibus Ave', 78, NULL, ''),
+(271, '1919-12-05', 'CPDTBZ70Y12I164T', 'Villani', 'Debora', '83496', '1358 Dolor St.', 365, NULL, ''),
+(272, '1924-03-23', 'GYFYKF83X53X560S', 'Ruggeri', 'Martina', '68615', 'Ap #585-6609 Massa Ave', 377, NULL, ''),
+(273, '1958-12-18', 'KRIOEM26B63R875F', 'Martino', 'Claudio', '87942', '814-574 Lacus Road', 423, NULL, ''),
+(274, '1966-07-02', 'DHAONA99R95D659O', 'Sala', 'Sofia', '92131', '892-5065 Lectus Street', 217, NULL, ''),
+(275, '1950-11-20', 'DILAKJ78D02I189U', 'Olivieri', 'Domenico', '56352', 'P.O. Box 100, 1349 Gravid', 60, NULL, ''),
+(276, '1957-12-25', 'XILRUZ55N39K015F', 'Ferrero', 'Giacomo', '69082', '772-6284 Eleifend. Avenue', 4, NULL, ''),
+(277, '1986-06-05', 'YACFZN89V84O872L', 'Ferro', 'Lucia', '70427', 'P.O. Box 466, 2176 Orci A', 415, NULL, ''),
+(278, '1939-02-18', 'BTPWJW62X10I296S', 'Messina', 'Sofia', '81367', '3462 Placerat. Avenue', 84, NULL, ''),
+(279, '1990-03-18', 'JNFIKH04G12W790N', 'Vitale', 'Valeria', '81495', 'P.O. Box 406, 3203 Netus ', 188, NULL, ''),
+(280, '1925-01-13', 'YFKBYR67K30M918H', 'Albanese', 'Greta', '43629', 'Ap #842-7751 Justo St.', 294, NULL, ''),
+(281, '1975-08-25', 'QTIWIO21F50C931N', 'Parisi', 'Giovanni', '29129', 'P.O. Box 806, 5997 In Rd.', 32, NULL, ''),
+(282, '1968-06-10', 'AHEYPV60C29V530M', 'Pellegrino', 'Gianni', '87583', 'P.O. Box 882, 1829 Odio. ', 445, NULL, ''),
+(283, '1935-09-06', 'RXDHAG92C70P013W', 'Orlando', 'Enrico', '78804', 'P.O. Box 184, 3824 Tellus', 119, NULL, ''),
+(284, '1983-02-07', 'ZQGVOE13Z97T231O', 'Greco', 'Nicole', '74116', '5193 Diam. Av.', 371, NULL, ''),
+(285, '1933-07-26', 'UPGIEB70M12N567M', 'Ferri', 'Lucio', '47716', 'P.O. Box 329, 8297 Ornare', 175, NULL, ''),
+(286, '1956-02-17', 'GTJSIS55H58X336Y', 'Marra', 'Jessica', '98104', '573-1926 Sed Road', 167, NULL, ''),
+(287, '1934-01-28', 'LNSWCK25Z76J273P', 'Marini', 'Claudio', '36566', 'P.O. Box 872, 7729 Ligula', 102, NULL, ''),
+(288, '1997-04-20', 'ZZMGLR51M71T855S', 'Amato', 'Lisa', '16669', '540 Rutrum Avenue', 234, NULL, ''),
+(289, '1983-03-14', 'ZXWSWR26S72T916L', 'Barbieri', 'Elena', '61732', '4130 Velit Avenue', 74, NULL, ''),
+(290, '1969-02-08', 'MCSVVM07S95U830B', 'Piazza', 'Gabriele', '01723', 'P.O. Box 296, 8446 Nulla ', 238, NULL, ''),
+(291, '1939-06-18', 'GNQDWT03C98T311P', 'Rizzi', 'Camilla', '54583', 'Ap #477-5862 Vitae Avenue', 488, NULL, ''),
+(292, '1990-11-25', 'JXHZQN27Z91Q515S', 'Russo', 'Salvatore', '79705', '9843 Phasellus St.', 240, NULL, ''),
+(293, '1944-07-10', 'DXFVAG97M85K728Y', 'Brambilla', 'Tommaso', '14204', 'P.O. Box 556, 6913 Sapien', 449, NULL, ''),
+(294, '1954-01-19', 'NSDZRK51Q92D921V', 'De Santis', 'Nicola', '71714', '5168 Cum Rd.', 275, NULL, ''),
+(295, '1968-01-04', 'DXVCES39E88G309D', 'Testa', 'Matilde', '64963', 'P.O. Box 986, 7668 Facili', 202, NULL, ''),
+(296, '1991-03-24', 'NVFXCT05I81O468A', 'Ferrara', 'Luigi', '12686', '649-5662 Cras Avenue', 169, NULL, ''),
+(297, '1928-01-27', 'UTFVAF02X46T959V', 'Bruni', 'Rebecca', '25927', '8142 Et Av.', 68, NULL, ''),
+(298, '1930-10-18', 'YIJSQY42S68G871U', 'Pinna', 'Luigi', '29660', '3995 Enim Rd.', 356, NULL, ''),
+(299, '1935-10-04', 'HSRIQD24P79C943X', 'Ferretti', 'Roberta', '43237', 'P.O. Box 394, 495 Neque S', 33, NULL, ''),
+(300, '1955-08-15', 'VHCLDH74S59G012C', 'Battaglia', 'Lucia', '02669', 'Ap #708-7093 Nonummy Stre', 476, NULL, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `effettuare`
+-- Struttura della tabella `effettuare`
 --
 
 CREATE TABLE `effettuare` (
@@ -209,7 +209,7 @@ CREATE TABLE `effettuare` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `effettuare`
+-- Dump dei dati per la tabella `effettuare`
 --
 
 INSERT INTO `effettuare` (`fk_id_intervento`, `fk_id_meccanico`) VALUES
@@ -292,7 +292,7 @@ INSERT INTO `effettuare` (`fk_id_intervento`, `fk_id_meccanico`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fattura`
+-- Struttura della tabella `fattura`
 --
 
 CREATE TABLE `fattura` (
@@ -304,7 +304,7 @@ CREATE TABLE `fattura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `fattura`
+-- Dump dei dati per la tabella `fattura`
 --
 
 INSERT INTO `fattura` (`id_fattura`, `data_emissione`, `imponibile`, `imposta`, `fk_id_operazione`) VALUES
@@ -412,7 +412,7 @@ INSERT INTO `fattura` (`id_fattura`, `data_emissione`, `imponibile`, `imposta`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `intervento`
+-- Struttura della tabella `intervento`
 --
 
 CREATE TABLE `intervento` (
@@ -423,7 +423,7 @@ CREATE TABLE `intervento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `intervento`
+-- Dump dei dati per la tabella `intervento`
 --
 
 INSERT INTO `intervento` (`id_intervento`, `descrizione`, `fk_id_operazione`, `fk_id_anagrafico`) VALUES
@@ -531,7 +531,7 @@ INSERT INTO `intervento` (`id_intervento`, `descrizione`, `fk_id_operazione`, `f
 -- --------------------------------------------------------
 
 --
--- Table structure for table `meccanico`
+-- Struttura della tabella `meccanico`
 --
 
 CREATE TABLE `meccanico` (
@@ -544,7 +544,7 @@ CREATE TABLE `meccanico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `meccanico`
+-- Dump dei dati per la tabella `meccanico`
 --
 
 INSERT INTO `meccanico` (`id_meccanico`, `matricola`, `nome_m`, `cognome_m`, `livello`, `pass_meccanico`) VALUES
@@ -630,7 +630,7 @@ INSERT INTO `meccanico` (`id_meccanico`, `matricola`, `nome_m`, `cognome_m`, `li
 -- --------------------------------------------------------
 
 --
--- Table structure for table `operazione`
+-- Struttura della tabella `operazione`
 --
 
 CREATE TABLE `operazione` (
@@ -642,7 +642,7 @@ CREATE TABLE `operazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `operazione`
+-- Dump dei dati per la tabella `operazione`
 --
 
 INSERT INTO `operazione` (`id_operazione`, `data_inizio`, `data_fine_prevista`, `data_riconsegna_effettiva`, `fk_id_veicolo`) VALUES
@@ -750,7 +750,7 @@ INSERT INTO `operazione` (`id_operazione`, `data_inizio`, `data_fine_prevista`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodotto`
+-- Struttura della tabella `prodotto`
 --
 
 CREATE TABLE `prodotto` (
@@ -762,7 +762,7 @@ CREATE TABLE `prodotto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `prodotto`
+-- Dump dei dati per la tabella `prodotto`
 --
 
 INSERT INTO `prodotto` (`id_prodotto`, `nome_prod`, `costo_unitario`, `aliquota_iva`, `categoria`) VALUES
@@ -778,7 +778,7 @@ INSERT INTO `prodotto` (`id_prodotto`, `nome_prod`, `costo_unitario`, `aliquota_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registrazione`
+-- Struttura della tabella `registrazione`
 --
 
 CREATE TABLE `registrazione` (
@@ -788,7 +788,7 @@ CREATE TABLE `registrazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `registrazione`
+-- Dump dei dati per la tabella `registrazione`
 --
 
 INSERT INTO `registrazione` (`fk_id_cliente`, `username`, `password`) VALUES
@@ -811,7 +811,7 @@ INSERT INTO `registrazione` (`fk_id_cliente`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilizzo`
+-- Struttura della tabella `utilizzo`
 --
 
 CREATE TABLE `utilizzo` (
@@ -821,7 +821,7 @@ CREATE TABLE `utilizzo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `utilizzo`
+-- Dump dei dati per la tabella `utilizzo`
 --
 
 INSERT INTO `utilizzo` (`fk_id_intervento`, `fk_id_prodotto`, `quantita`) VALUES
@@ -929,7 +929,7 @@ INSERT INTO `utilizzo` (`fk_id_intervento`, `fk_id_prodotto`, `quantita`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `veicolo`
+-- Struttura della tabella `veicolo`
 --
 
 CREATE TABLE `veicolo` (
@@ -943,7 +943,7 @@ CREATE TABLE `veicolo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `veicolo`
+-- Dump dei dati per la tabella `veicolo`
 --
 
 INSERT INTO `veicolo` (`id_veicolo`, `nomeV`, `targa`, `tipo`, `cavalli`, `cilindrata`, `fk_id_cliente`) VALUES
@@ -1049,43 +1049,44 @@ INSERT INTO `veicolo` (`id_veicolo`, `nomeV`, `targa`, `tipo`, `cavalli`, `cilin
 (120, 'Lincoln', 'PH 056', 'Berlina', 10, 1065, 216);
 
 --
--- Indexes for dumped tables
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indexes for table `amministratore`
+-- Indici per le tabelle `amministratore`
 --
 ALTER TABLE `amministratore`
   ADD PRIMARY KEY (`idAmministratore`);
 
 --
--- Indexes for table `anagrafica_intervento`
+-- Indici per le tabelle `anagrafica_intervento`
 --
 ALTER TABLE `anagrafica_intervento`
   ADD PRIMARY KEY (`id_anagrafico`);
 
 --
--- Indexes for table `cliente`
+-- Indici per le tabelle `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`);
+  ADD PRIMARY KEY (`id_cliente`),
+  ADD UNIQUE KEY `telefono` (`telefono`,`email`);
 
 --
--- Indexes for table `effettuare`
+-- Indici per le tabelle `effettuare`
 --
 ALTER TABLE `effettuare`
   ADD KEY `fk_id_intervento` (`fk_id_intervento`),
   ADD KEY `fk_id_meccanico` (`fk_id_meccanico`);
 
 --
--- Indexes for table `fattura`
+-- Indici per le tabelle `fattura`
 --
 ALTER TABLE `fattura`
   ADD PRIMARY KEY (`id_fattura`),
   ADD KEY `fk_id_operazione` (`fk_id_operazione`);
 
 --
--- Indexes for table `intervento`
+-- Indici per le tabelle `intervento`
 --
 ALTER TABLE `intervento`
   ADD PRIMARY KEY (`id_intervento`),
@@ -1093,27 +1094,27 @@ ALTER TABLE `intervento`
   ADD KEY `fd_id_anagrafico` (`fk_id_anagrafico`);
 
 --
--- Indexes for table `meccanico`
+-- Indici per le tabelle `meccanico`
 --
 ALTER TABLE `meccanico`
   ADD PRIMARY KEY (`id_meccanico`),
   ADD UNIQUE KEY `matricola` (`matricola`);
 
 --
--- Indexes for table `operazione`
+-- Indici per le tabelle `operazione`
 --
 ALTER TABLE `operazione`
   ADD PRIMARY KEY (`id_operazione`),
   ADD KEY `fk_id_veicolo` (`fk_id_veicolo`);
 
 --
--- Indexes for table `prodotto`
+-- Indici per le tabelle `prodotto`
 --
 ALTER TABLE `prodotto`
   ADD PRIMARY KEY (`id_prodotto`);
 
 --
--- Indexes for table `registrazione`
+-- Indici per le tabelle `registrazione`
 --
 ALTER TABLE `registrazione`
   ADD PRIMARY KEY (`fk_id_cliente`),
@@ -1121,14 +1122,14 @@ ALTER TABLE `registrazione`
   ADD KEY `fk_id_cliente` (`fk_id_cliente`);
 
 --
--- Indexes for table `utilizzo`
+-- Indici per le tabelle `utilizzo`
 --
 ALTER TABLE `utilizzo`
   ADD KEY `fk_id_intervento` (`fk_id_intervento`),
   ADD KEY `fk_id_prodotto` (`fk_id_prodotto`);
 
 --
--- Indexes for table `veicolo`
+-- Indici per le tabelle `veicolo`
 --
 ALTER TABLE `veicolo`
   ADD PRIMARY KEY (`id_veicolo`),
@@ -1136,108 +1137,108 @@ ALTER TABLE `veicolo`
   ADD KEY `fk_id_cliente` (`fk_id_cliente`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT for table `amministratore`
+-- AUTO_INCREMENT per la tabella `amministratore`
 --
 ALTER TABLE `amministratore`
   MODIFY `idAmministratore` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `anagrafica_intervento`
+-- AUTO_INCREMENT per la tabella `anagrafica_intervento`
 --
 ALTER TABLE `anagrafica_intervento`
   MODIFY `id_anagrafico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `cliente`
+-- AUTO_INCREMENT per la tabella `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 
 --
--- AUTO_INCREMENT for table `fattura`
+-- AUTO_INCREMENT per la tabella `fattura`
 --
 ALTER TABLE `fattura`
   MODIFY `id_fattura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
 
 --
--- AUTO_INCREMENT for table `intervento`
+-- AUTO_INCREMENT per la tabella `intervento`
 --
 ALTER TABLE `intervento`
   MODIFY `id_intervento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `meccanico`
+-- AUTO_INCREMENT per la tabella `meccanico`
 --
 ALTER TABLE `meccanico`
   MODIFY `id_meccanico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `operazione`
+-- AUTO_INCREMENT per la tabella `operazione`
 --
 ALTER TABLE `operazione`
   MODIFY `id_operazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `prodotto`
+-- AUTO_INCREMENT per la tabella `prodotto`
 --
 ALTER TABLE `prodotto`
   MODIFY `id_prodotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `veicolo`
+-- AUTO_INCREMENT per la tabella `veicolo`
 --
 ALTER TABLE `veicolo`
   MODIFY `id_veicolo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
--- Constraints for dumped tables
+-- Limiti per le tabelle scaricate
 --
 
 --
--- Constraints for table `effettuare`
+-- Limiti per la tabella `effettuare`
 --
 ALTER TABLE `effettuare`
   ADD CONSTRAINT `effettuare_ibfk_1` FOREIGN KEY (`fk_id_intervento`) REFERENCES `intervento` (`id_intervento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `effettuare_ibfk_2` FOREIGN KEY (`fk_id_meccanico`) REFERENCES `meccanico` (`id_meccanico`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `fattura`
+-- Limiti per la tabella `fattura`
 --
 ALTER TABLE `fattura`
   ADD CONSTRAINT `fattura_ibfk_1` FOREIGN KEY (`fk_id_operazione`) REFERENCES `operazione` (`id_operazione`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `intervento`
+-- Limiti per la tabella `intervento`
 --
 ALTER TABLE `intervento`
   ADD CONSTRAINT `intervento_ibfk_1` FOREIGN KEY (`fk_id_operazione`) REFERENCES `operazione` (`id_operazione`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `intervento_ibfk_2` FOREIGN KEY (`fk_id_anagrafico`) REFERENCES `anagrafica_intervento` (`id_anagrafico`) ON DELETE NO ACTION;
 
 --
--- Constraints for table `operazione`
+-- Limiti per la tabella `operazione`
 --
 ALTER TABLE `operazione`
   ADD CONSTRAINT `operazione_ibfk_1` FOREIGN KEY (`fk_id_veicolo`) REFERENCES `veicolo` (`id_veicolo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `registrazione`
+-- Limiti per la tabella `registrazione`
 --
 ALTER TABLE `registrazione`
   ADD CONSTRAINT `registrazione_ibfk_1` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Constraints for table `utilizzo`
+-- Limiti per la tabella `utilizzo`
 --
 ALTER TABLE `utilizzo`
   ADD CONSTRAINT `utilizzo_ibfk_1` FOREIGN KEY (`fk_id_intervento`) REFERENCES `intervento` (`id_intervento`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `utilizzo_ibfk_2` FOREIGN KEY (`fk_id_prodotto`) REFERENCES `prodotto` (`id_prodotto`);
 
 --
--- Constraints for table `veicolo`
+-- Limiti per la tabella `veicolo`
 --
 ALTER TABLE `veicolo`
   ADD CONSTRAINT `veicolo_ibfk_1` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
