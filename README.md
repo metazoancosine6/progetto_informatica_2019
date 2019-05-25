@@ -10,13 +10,14 @@ Lista delle cose da fare:
   - il cliente deve poter vedere lo stato delle sue macchine in elaborazione  
   - gestire fattura  
   - commentare il codice  
+  
+  - Modifica ed elimina cliente (compito amministrazione)
+  - registrazione delle credenziali dei clienti nel DB (compito amministrazione)
+ 
   ✅ navbar automatica (html + php). Il file verrà poi incluso in ogni head dei file. [by dag7dev]  
   ✅ controllo privilegi cookie per accesso alle pagine [by dag7dev]  
   ✅ evitare il tag center [by dag7dev]  
   ✅ collegare pagine [by dag7dev]  
-  
-  - Modifica ed elimina cliente (compito amministrazione)
-  - registrazione delle credenziali dei clienti nel DB (compito amministrazione)
  
 Pagine mancanti:  
   Utenza Amministratore  
