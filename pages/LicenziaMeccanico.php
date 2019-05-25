@@ -6,22 +6,15 @@
     </head>
 
     <body>
-        <?php session_start(); ?>
-        <div class="navbar max-widht bgblack" style="height: 11%;width: 100%;"><!--la navbar qui è strana, ho messo la dimenzioni a occhio-->
-            <h1 style="border-bottom: 3px solid white;" class="center max-widht">Area Amministratore</h1>
-            <div class="navbar-left" id="menu">
-                <a href="index.php">Home</a>
-                <?php
-                echo "<a href='profilo.php'>Amministratore:";
-                echo $_SESSION["username"] . "</a>";
-                ?>
-
-            </div>
-        </div>
+        <?php session_start();
+	    include ("utils.php");
+	    createNavBar();
+	    ?>
+        
         <div class="box bgwhite center " style="width:30%; margin:0px auto; margin-top:5%;">
             <?php
             //Collegamento al db
-            include ("utils.php");
+            
             $myconn = connect();
             ?>
             <form action="" method="POST">
