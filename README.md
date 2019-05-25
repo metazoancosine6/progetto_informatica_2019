@@ -28,6 +28,7 @@ Pagine mancanti:
     -Cancella Veicolo
   Utenza Cliente
     -Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)
+    - pagina per creare username e password dato il codice fiscale
   
 progetti futuri:
   - bootstrap per css 
