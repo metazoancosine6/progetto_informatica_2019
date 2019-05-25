@@ -23,11 +23,11 @@
                 <table>
                     <tr>
                         <h1 style="color:black; text-align:center;">Accedi</h1>
-                        <td>Username:</td><td><input type="text" name="username" size="20"><br></td>
+                        <td>Username:</td><td><input type="text" name="username" size="20" required><br></td>
                     </tr>
 
                     <tr>
-                        <td>Password:</td><td><input type="password" name="password" size="20"><br></td>
+                        <td>Password:</td><td><input type="password" name="password" size="20" required><br></td>
                     </tr>
                 </table>
                 

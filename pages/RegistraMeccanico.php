@@ -28,8 +28,7 @@
 					<tr><td>Matricola: 			</td><td><input type="text" name="matricola" maxlength="10" required><br></td></tr>
 					<tr><td>Nome: 				</td><td><input type="text" name="nome" maxlength="10" required ><br></td></tr>
 					<tr><td>Cognome: 			</td><td><input type="text" name="cognome" maxlength="15" required><br></td></tr>
-					<tr><td>Livello: 			</td><td><input type="number" name="livello" min="1" max="10"><br></td></tr>
-					<tr><td>Password: 			</td><td><input type="pass" name="pass" maxlength="20"><br></td></tr>
+					<tr><td>Password: 			</td><td><input type="pass" name="pass" maxlength="20" required><br></td></tr>
 					
 				</table>
 
@@ -45,7 +44,6 @@
 						$matricola 	=	$_POST["matricola"];
 						$nome 		=	$_POST["nome"];
 						$cognome 	=	$_POST["cognome"];
-						$livello 	=	$_POST["livello"];
 						$pass 		=	$_POST["pass"];
 					}
 					
@@ -56,11 +54,10 @@
 					}
 					
 					$sql = 
-						"INSERT INTO meccanico (matricola, nome_m, cognome_m, livello, pass_meccanico) VALUES(".
+						"INSERT INTO meccanico (matricola, nome_m, cognome_m, pass_meccanico) VALUES(".
 						"\"". $matricola . "\"" . "," .
 						"\"". $nome . "\"". "," .
 						"\"". $cognome . "\"". "," .
-						$livello ."," .
 						"\"". $pass . "\"" . ");";
 
 					// esegue query e vede se e' andata a buon fine

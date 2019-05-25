@@ -111,7 +111,7 @@
                         <p>Seleziona quantità: </p>
                     </td>
                     <td>
-                        <input type="number" id="quantita" step="1" max="999" min="0" value="0" onchange="costo()">
+                        <input type="number" id="quantita" step="1" max="999" min="0" value="0" onchange="costo()" required>
                     </td>
                 </tr>
                 <tr>

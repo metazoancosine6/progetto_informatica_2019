@@ -61,7 +61,7 @@
                     <tr>
                         <td><p>Operazioni in corso(data di inzio)</p></td>
                         <td>
-                            <select name="data_inizio" id="selOp" >
+                            <select name="data_inizio" id="selOp">
 
                                 <?php
                                     // la query delle operazioni ancora in corso

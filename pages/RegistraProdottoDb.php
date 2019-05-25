@@ -30,7 +30,7 @@
 						Nome del prodotto
 					</td>
 					<td>
-						<input type="text" name="nomeP" maxlength="25">
+						<input type="text" name="nomeP" maxlength="25" required>
 					</td>
 				</tr>
 				<tr>
@@ -38,7 +38,7 @@
 						Costo del prodotto
 					</td>
 					<td>
-						<input type=number name="costo" step=0.01 max="999.99" min="0.01" />
+						<input type=number name="costo" step=0.01 max="999.99" min="0.01" required>
 					</td>
 				</tr>
 				<tr>
@@ -46,7 +46,7 @@
 						Aliquota iva
 					</td>
 					<td>
-						<input type=number name="iva" step=1 max="99" min="0" />
+						<input type=number name="iva" step=1 max="99" min="0" required />
 					</td>
 				</tr>
 				<tr>
