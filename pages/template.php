@@ -12,6 +12,9 @@
         <div class = 'navbar bgblack maxwidth' id='menu'>
             <?php
                 include("utils.php");
+		
+		// richiamare funzione di controllo dei privilegi (vedere utils.php)
+		
                 session_start();
                 createNavBar();
             ?>
