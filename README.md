@@ -6,7 +6,7 @@ https://github.com/emergenzeHack/terremotocentro/wiki/002-Come-si-usa-Github
 https://github.com/emergenzeHack/terremotocentro/wiki/003-Come-si-apre-un-issue
   
 Lista delle cose da fare:  
-  - controllo sull'input  
+  - controllo sull'input  [fatto in parte by dag7dev]
   - il cliente deve poter vedere lo stato delle sue macchine in elaborazione  
   - gestire fattura  
   - commentare il codice  
