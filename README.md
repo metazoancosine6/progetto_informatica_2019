@@ -19,7 +19,6 @@ Lista delle cose da fare:
 Pagine mancanti:
   Utenza Amministratore
     -Modifica Dati Meccanico
-    -Cancella Prodotto
     -Modifica Prodotto
     -Modifica Cliente
     -Cancella Cliente
