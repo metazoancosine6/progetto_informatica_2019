@@ -14,6 +14,9 @@
                 include("utils.php");
                 session_start();
                 createNavBar();
+		
+		// richiamare funzione di controllo dei permessi
+		// checkUserPermissions(); || checkMeccPermissions(); || checkAdminPermissions();
             ?>
         </div>
         
