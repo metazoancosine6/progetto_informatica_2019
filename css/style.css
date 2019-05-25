@@ -11,11 +11,15 @@ body{
     font-size: 20px;
 }
 
+.header_page {
+    border-bottom: 3px solid white;
+}
+
 /* inizio menu */
 
-.navbar{ 
+.navbar { 
     overflow: hidden;
-    font-size: 120%;
+    font-size: 110%;
     transition-property: background-color;
     transition-duration: 1s;
 }
@@ -26,24 +30,14 @@ body{
     background-color:rgba(0,0,0,0.7);
 }
     
-.navbar-right{
-    height: auto;
-    float: right;
-}
-
-.navbar-left{
-    font-size: 90%;
-    padding-right: 5%;
-    float: left;
-}
 
 #menu > a {
   float: left;
-  height: 100%;
+
   font-size: 80%;
   display: block;
   color: white;
-  padding: 4.5% 20px;
+  padding: 2% 20px;
   text-decoration: none;
 }
 
