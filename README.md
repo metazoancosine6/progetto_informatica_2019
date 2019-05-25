@@ -15,11 +15,11 @@ Lista delle cose da fare:
   - commentare il codice
   - collegare pagine
   - Modifica ed elimina cliente (compito amministrazione)
+  - registrazione delle credenziali dei clienti nel DB (compito amministrazione)
  
 Pagine mancanti:
   Utenza Amministratore
     -Modifica Dati Meccanico
-    -Cancella Prodotto
     -Modifica Prodotto
     -Modifica Cliente
     -Cancella Cliente
