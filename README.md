@@ -15,6 +15,7 @@ Lista delle cose da fare:
   - commentare il codice
   - collegare pagine
   - Modifica ed elimina cliente (compito amministrazione)
+  - registrazione delle credenziali dei clienti nel DB (compito amministrazione)
  
 Pagine mancanti:
   Utenza Amministratore
