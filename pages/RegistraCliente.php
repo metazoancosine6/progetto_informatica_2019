@@ -1,13 +1,22 @@
 <html>
 	<head>
 		<title>Registra Cliente</title>
+		<link rel="stylesheet" href="../css/style.css"  >    
 	</head>
 
 	<body>
-		
-		
-		<div class="div" style="margin-top:5%;">
-			<center><h1>Registra Cliente</h1></center>
+		<h1 class="center bgblack header_page">Registra Cliente </h1>
+        
+        <div class = 'navbar bgblack maxwidth' id='menu'>
+            <?php
+                include("utils.php");
+                session_start();
+                //checkAdminPermissions();
+                createNavBar();
+            ?>
+        </div>
+
+		<div class="bgwhite">
 			<form action=" " method="POST">
 				<table align="center">
 					<tr><td>Nome: 				</td><td><input type="text" name="nome" ><br></td></tr>
@@ -27,7 +36,6 @@
 			</form>
 		
 			<?php
-				include "utils.php";
 				if(isset($_POST["btn"])){
 					if($_SERVER['REQUEST_METHOD'] === 'POST'){
 						$nome=$_POST["nome"];

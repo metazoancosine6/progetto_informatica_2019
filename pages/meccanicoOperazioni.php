@@ -7,28 +7,29 @@
 </head>
 <body style="background-image:url('../image/gears.png'); background-size: auto; ">
 
+    <h1 class="center bgblack header_page">Registra Intervento</h1>
 
-    <?php session_start(); ?>
-    <div class="navbar max-widht bgblack">
-        <h1 style="border-bottom: 3px solid white;" class="center max-widht">Area Meccanico</h1>
-        <div class="navbar-left" id="menu">
-            <a href="index.php">Home</a>
-            <?php
-            echo "<a href='profilo.php'>Meccanico:";
-            echo $_SESSION["username"] . "</a>";
-            echo "<a href='meccanicoOperazioni.php'>meccanicoOperazioni</a>";
-            ?>
-
-        </div>
+    <div class = 'navbar bgblack maxwidth' id='menu'>
+        <?php
+        include("utils.php");
+        session_start();
+        checkMeccPermissions();
+        createNavBar();
+        ?>
     </div>
-    <div class="box bgwhite center " style="width:30%; margin:0px auto; margin-top:5%;">
+
+    <?php
+    $myconn = connect();
+    ?>
+
+    <div class="box bgwhite center">
         <form action="" method="POST" style="width:90%; margin-left: 0px;">
 
-            <h2>Elenco Targhe Veicoli</h2>
+            <h2 class = "center">Elenco Targhe Veicoli</h2>
             <select id="targa" name="targa">
                 <?php
 //se per quella targa non ci sono operazioni, allora bisognerà mostargli un pulsante che rimanda all'inserimento operazionoe
-                include "utils.php";
+                
                 $myconn = connect();
                 $query = "SELECT targa FROM veicolo ";
                 $rset = execute($myconn, $query);
@@ -36,7 +37,7 @@
                 if ($rset == NULL) {
                     echo "Nessun Risultato";
                 } else {
-    //stampo la select
+                    //stampo la select
 
                     while ($row = $rset->fetch_assoc()) {
                         echo "<option>" . $row["targa"] . "</option>";
@@ -64,7 +65,7 @@
         //Se e in lavorazione
         //controllo se la query mi restituisce righe 0.
         //questo perchè se non ci sono operazioni per quella macchina la query mi restituisce righe 0
-                if ($rset->num_rows == 0) {
+                if (!isset($rset)) {
             //non ha operazioni
                     echo " La macchina non ha ancora un operazione <br><table>
                     <tr>

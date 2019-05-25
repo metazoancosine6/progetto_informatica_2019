@@ -1,11 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <?php
-            include("utils.php");
-            createNavBar();
-        
-        ?>
+        <link rel="stylesheet" href="../css/style.css"  >
+
         <script>
             //Funzione che richiama search.php e gli passa la targa del veicolo selezionato
             function cercaNomeInter() {
@@ -52,15 +49,28 @@
             }
         </script>
 
-    <link rel="stylesheet" href="../css/style.css"  > 
     </head>
 
     <body onload="cercaNomeInter(); costo()">
 
+        <h1 class="center bgblack header_page">Inserimento prodotto</h1>
+
+              <div class = 'navbar bgblack maxwidth' id='menu'>
+                <?php
+                include("utils.php");
+                session_start();
+                checkMeccPermissions();
+                createNavBar();
+                ?>
+              </div>
+
+              <?php
+              $myconn = connect();
+              ?>
+
+
         <div class="bggrey">
 
-    <center>
-        <h1 class = "bgblack">Inserire prodotto</h1>
         <?php
         $targa = $_GET["targa"];
         echo "<table>";
@@ -83,8 +93,7 @@
                     <td>
                         <?php
                         //Si crea una select con i nomi dei prodtti registrati nel database
-                        $myconn = connect();
-
+                        
                         $query = "SELECT nome_prod "
                                 . "FROM prodotto";
 
@@ -122,10 +131,9 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" class="bgblack" onclick="inserisci()" value="Inserisci">
+            <center><input type="button" onclick="inserisci()" value="Inserisci"></center>
             <p id="output"></p>
         </form>
-    </center>
 </div>
 </body>
 </html>

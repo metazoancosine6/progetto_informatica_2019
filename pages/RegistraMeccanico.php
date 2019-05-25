@@ -1,13 +1,28 @@
 <html>
 	<head>
 		<title>Registra Meccanico</title>
+		<link rel="stylesheet" href="../css/style.css"  >
 	</head>
 
 	<body>
+		<h1 class="center bgblack header_page">Registra Meccanico</h1>
+        
+        <div class = 'navbar bgblack maxwidth' id='menu'>
+            <?php
+                include("utils.php");
+                session_start();
+                checkAdminPermissions();
+                createNavBar();
+            ?>
+        </div>
+
+        <?php
+            $myconn = connect();
+        ?>
+
 		
-		
-		<div class="div" style="margin-top:5%;">
-			<center><h1>Registra Meccanico</h1></center>
+		<div class=" bgwhite center">
+			
 			<form action=" " method="POST">
 				<table align="center">
 					<tr><td>Matricola: 			</td><td><input type="text" name="matricola" maxlength="10" required><br></td></tr>
@@ -22,7 +37,7 @@
 			</form>
 		
 			<?php
-				include "utils.php";
+
 
 				// controlla se ho premuto il bottone invia
 				if(isset($_POST["btn"])){

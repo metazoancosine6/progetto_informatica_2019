@@ -1,26 +1,32 @@
 <?php
+// crea dinamicamente la barra di navigazione a seconda dei privilegi che si hanno
+// la barra e' inserita in un apposito div
+
 function createNavBar() {
-	echo "<h1 class = 'bgblack'>Simauto</h1>";
-
-	echo "<nav class = 'navbar'>";
-
+	// controlla se i privilegi non sono settati (e li imposta a 0, valore di default)
+   	if(!isset($_SESSION['privilegi'])) {
+		$_SESSION['privilegi'] = 0;
+	}
+	
+	echo "<a href='index.php'> " . "Home" . "</a>";
+	echo "<a href='profilo.php'> " . "Profilo" . "</a>";
+	
 	switch($_SESSION['privilegi']) {
 		// non loggato
 		case 0:
-			echo "<a href='index.php'> " . "Home" . "</a>";
 			echo "<a href='login.php'> " . "Login" . "</a>";
 			break;
 
 		// utente
 		case 1:
 			echo "<a href='storico.php'> " . "Storico Fatture / Operazioni" . "</a>";
-			echo "<a href='login.php'> " . "Login" . "</a>";
 			echo "<a href='logout.php'> " . "Logout" . "</a>";
 			break;
 
 		// meccanico
 		case 2:
 			echo "<a href='meccanicoOperazioni.php'> " . "Operazioni Meccanico" . "</a>";
+			echo "<a href='RegistraVeicolo.php'> " . "Registra Veicolo" . "</a>";
 			echo "<a href='logout.php'> " . "Logout" . "</a>";
 			break;
 
@@ -28,15 +34,109 @@ function createNavBar() {
 		case 3:
 			echo "<a href='RegistraMeccanico.php'> " . "Registra Meccanico" . "</a>";
 			echo "<a href='LicenziaMeccanico.php'> " . "Licenzia Meccanico" . "</a>";
+
+			echo "<a href='RegistraCliente.php'> " . "Registra Cliente" . "</a>";
+
 			echo "<a href='RegistraProdottoDb.php'> " . "Registra Prodotto Db" . "</a>";
+
+			echo "<a href='RegistraIntervento.php'> " . "Registra Intervento" . "</a>";
 			
 			echo "<a href='logout.php'> " . "Logout" . "</a>";
 		
 			break;
 	}
 
-	echo "</nav>";
+
 }
+
+
+
+// funzioni di check
+// vanno richiamate in ogni pagina dove si vuole controllare l'accesso
+
+// ritorna true se l'accesso e' permesso
+// false se non e' permesso
+
+/*
+	ACCESSI:
+	accesso negato 		-> 	tutti
+	accesso riuscito	->	tutti
+	login -> negato se sei gia' loggato
+	logout -> tutti
+	profilo -> tutti
+	
+	regCliente 		-> ?
+	regIntervento 	-> admin
+	regMeccanico 	-> admin
+	LicenziaMecc 	-> admin
+	regProdDb 		-> admin
+	
+	collegaInterv	-> meccanico
+	regProd 		-> meccanico
+	regVeicolo 		-> meccanico
+	meccOperazioni 	-> meccanico
+	ricons è in operaz meccanico
+*/
+
+function checkNotLoggedPermissions() {
+	$state = false;
+
+	if($_SESSION['privilegi'] == 0) {
+		$state = true;
+	}
+	else {
+		// rimane false, cioe' non permesso
+		header("Refresh:0; url=403.php");
+	}
+
+	return $state;
+} 
+
+
+function checkUserPermissions() {
+	$state = false;
+
+	if($_SESSION['privilegi'] == 1) {
+		$state = true;
+	}
+	else {
+		// rimane false, cioe' non permesso
+		header("Refresh:0; url=403.php");
+	}
+
+	return $state;
+} 
+
+function checkMeccPermissions() {
+	$state = false;
+
+	if($_SESSION['privilegi'] == 2) {
+		$state = true;
+	}
+	else {
+		// rimane false, cioe' non permesso
+		header("Refresh:0; url=403.php");
+	}
+
+	return $state;
+} 
+
+function checkAdminPermissions() {
+	$state = false;
+
+	if($_SESSION['privilegi'] == 3) {
+		$state = true;
+
+	}
+	else {
+		// rimane false, cioe' non permesso, redirect su 403
+		header("Refresh:0; url=403.php");
+	}
+
+	return $state;
+} 
+
+
 
 function logout() {
 	session_unset();

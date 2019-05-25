@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="../css/style.css"  >
 </head>
 <body>
 	<center>
-		<h1>Inserimento del prodotto</h1>
-		<h4>Inserisce nuovo prodotto nel db</h4>
 		<form method="POST">
+			  <h1 class="center bgblack header_page">Inserimento del prodotto nel DB</h1>
+
+			  <div class = 'navbar bgblack maxwidth' id='menu'>
+			    <?php
+			    include("utils.php");
+			    session_start();
+			    checkAdminPermissions();
+			    createNavBar();
+			    ?>
+			  </div>
+
+			  <?php
+			  $myconn = connect();
+			  ?>
+
+			  <div class=" bgwhite center">
+
+
 			<table>
 				<tr>
 					<td>
@@ -38,9 +55,7 @@
 					</td>
 					<td>
 						<?php
-        					include ("utils.php");
-							$myconn = connect();
-							
+        					
 							$sql = "SELECT distinct categoria FROM prodotto";
 
 							$ris = $myconn->query($sql);
@@ -53,12 +68,14 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit">
+
+			</div>
+			<input type="submit" value="Registra">
 		</form>
 
 		<?php
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-				$conn = connect();
+				
  				var_dump($_POST);
  				$nomeP 			= $_POST['nomeP'];
                 $costo 			= $_POST['costo'];

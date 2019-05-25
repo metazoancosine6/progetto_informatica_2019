@@ -6,22 +6,23 @@
     </head>
 
     <body style="background-image:url('../image/gears.png'); background-size: auto; ">
-        <?php
-        include ("utils.php");
-        $myconn = connect();
-        ?>
-        <div class="navbar max-widht bgblack">
-            <h1 style="border-bottom: 3px solid white;" class="center max-widht">Area Meccanico</h1>
-            <div class="navbar-right" id="menu">
-                <a href="meccanicoOperazioni.php">Home</a>
-                <a href="RegistraAutomobile.php">registra veicolo</a>
-                <a href="#">Logout</a>
-            </div>
+        
+        <h1 class="center bgblack header_page">Registra Intervento</h1>
+        
+        <div class = 'navbar bgblack maxwidth' id='menu'>
+            <?php
+                include("utils.php");
+                session_start();
+                checkMeccPermissions();
+                createNavBar();
+            ?>
         </div>
-        <div class="box bgwhite center" style="width:50%; margin:0px auto; margin-top:5%;">
 
-            <h2>Registra Intervento</h2>
+        <?php
+            $myconn = connect();
+        ?>
 
+        <div class="bgwhite center">
             <form action="" method="POST">
                 <table>
                     <!-- Dropdown -->
@@ -41,16 +42,6 @@
                         </td>
                     </tr>
                     
-                    <!-- ???? -->
-                    <script type="text/javascript">
-                        
-                        function ao() {
-                            var x = document.getElementById("opzioni").value;
-
-                        }
-
-                    </script>
-
                     <!-- solo visual -->
                     <tr>
                         <td><p>Descrizione Intervento:</p> </td>
