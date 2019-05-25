@@ -3,11 +3,11 @@ function createNavBar() {
 	echo "<h1 class = 'bgblack'>Simauto</h1>";
 
 	echo "<nav class = 'navbar'>";
-
+	echo "<a href='index.php'> " . "Home" . "</a>";
 	switch($_SESSION['privilegi']) {
 		// non loggato
 		case 0:
-			echo "<a href='index.php'> " . "Home" . "</a>";
+			
 			echo "<a href='login.php'> " . "Login" . "</a>";
 			break;
 
