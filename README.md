@@ -10,8 +10,6 @@ Lista delle cose da fare:
   - il cliente deve poter vedere lo stato delle sue macchine in elaborazione  
   - gestire fattura  
   - commentare il codice  
-  
-  - Modifica ed elimina cliente (compito amministrazione)
   - registrazione delle credenziali dei clienti nel DB (compito amministrazione)
  
   ✅ navbar automatica (html + php). Il file verrà poi incluso in ogni head dei file. [by dag7dev]  
@@ -23,7 +21,7 @@ Pagine mancanti:
   Utenza Amministratore  
     ✅ Modifica Dati Meccanico[by GP]  
     - Modifica Prodotto  
-    - Modifica Cliente  
+    - Modifica Cliente
     - Cancella Cliente  
   Utenza Meccanico  
     - Modifica Dati Veicolo  
