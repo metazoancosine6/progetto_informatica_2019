@@ -21,12 +21,12 @@ Lista delle cose da fare:
  
 Pagine mancanti:  
   Utenza Amministratore  
-    - Modifica Dati Meccanico  
+    ✅ Modifica Dati Meccanico[by GP]  
     - Modifica Prodotto  
     - Modifica Cliente  
     - Cancella Cliente  
   Utenza Meccanico  
-    ✅ Modifica Dati Veicolo[by GP]  
+    - Modifica Dati Veicolo  
     - Cancella Veicolo  
   Utenza Cliente  
     - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
