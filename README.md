@@ -20,12 +20,12 @@ Lista delle cose da fare:
 Pagine mancanti:  
   Utenza Amministratore  
     ✅ Modifica Dati Meccanico[by GP]  
-    - Modifica Prodotto  
-    - Modifica Cliente
-    - Cancella Cliente  
+    - Modifica Prodotto[by LC]  
+    - Modifica Cliente[by CM]  
+    - Cancella Cliente[by dag7dev]  
   Utenza Meccanico  
-    - Modifica Dati Veicolo  
-    - Cancella Veicolo  
+    - Modifica Dati Veicolo[by dag7dev]  
+    - Cancella Veicolo[by LC]  
   Utenza Cliente  
     - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
     - pagina per creare username e password dato il codice fiscale  
