@@ -26,7 +26,7 @@ Pagine mancanti:
     - Modifica Cliente  
     - Cancella Cliente  
   Utenza Meccanico  
-    - Modifica Dati Veicolo  
+    ✅ Modifica Dati Veicolo[by GP]  
     - Cancella Veicolo  
   Utenza Cliente  
     - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
