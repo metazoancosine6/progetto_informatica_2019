@@ -23,16 +23,11 @@
             $myconn = connect();
             ?>
             <form action="" method="POST">
-                <center>
 
                     <table>
-                        <th colspan="3">
+                        <th colspan="2">
                         <h2 style="color: black">Licenzia Meccanico</h2>
                         </th>
-                        <!--
-                        Modificato da Claudio
-                        aggiustare allineamento tra componenti
-                        -->
                         <tr>				
                             <td>
                                 <select name="meccanico"><?php
@@ -42,10 +37,8 @@
                                     while ($row = $ris->fetch_assoc()) {
                                         echo "<option>" . $row["matricola"] . "</option>";
                                     }
-                                    ?></select></td>
-                            <td id="Nome"></td>
-                            <td id="Cognome"></td>
-                        <tr><td><input type="submit" name="licenzia" value="licenzia"></td></tr>
+                                    ?>
+				    </select></td><td><input type="submit" name="licenzia" value="licenzia"></td>
                         </tr>
 
                     </table>
@@ -59,19 +52,13 @@
                             //modificato da Claudio
                             //dato che l'execute restituisce sempre -1 con il delete, la query è stata eseguita con la sintassi classica ad ogetti
                             $rSet = $myconn->query($query);
-                            header("Refresh:0");
-                            /*
-                              if($ris<0){
-                              echo "Errore Query";
-                              }else{
-                              echo "<p id=\"stampa\"> Meccanico eliminato con successo </p>";
-                              } */
+                            header("Refresh:5");
+                        	echo "<p id=\"stampa\"> Meccanico eliminato con successo </p>";
                         }
                     }
                     ?>
 
             </form>
-        </center>
     </div>
 </body>
 </html>
