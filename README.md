@@ -22,7 +22,6 @@ Pagine mancanti:
     ✅ Modifica Dati Meccanico[by GP]  
     - Modifica Prodotto[by GP]  
     - Cancella Prodotto[by LC]  
-
     - Modifica Cliente[by CM]  
     - Cancella Cliente[by dag7dev]  
   Utenza Meccanico  
@@ -30,7 +29,6 @@ Pagine mancanti:
     - Cancella Veicolo[by LC]  
   Utenza Cliente  
     - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
-    - pagina per creare username e password dato il codice fiscale  
     
 progetti futuri:  
   - bootstrap per css   
