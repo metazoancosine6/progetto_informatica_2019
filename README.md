@@ -26,10 +26,13 @@ Pagine mancanti:
     - Cancella Cliente[by dag7dev]  
   Utenza Meccanico  
     - Modifica Dati Veicolo[by dag7dev]  
-    - Cancella Veicolo[by LC]  
+      
   Utenza Cliente  
     - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
-    
+  
+pagine cancellati:  
+- Cancella Veicolo(Non la facciamo un veicolo è lì e basta, comporterebbe perdita di dati sulle fatture e il resto)
+
 progetti futuri:  
   - bootstrap per css   
 
