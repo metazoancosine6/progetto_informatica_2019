@@ -23,7 +23,7 @@ Pagine mancanti:
     - Modifica Prodotto[by GP]  
     - Cancella Prodotto[by LC]  
     - Modifica Cliente[by CM]  
-    - Cancella Cliente[by dag7dev]  
+    - Cancella Cliente[by CM]  
   Utenza Meccanico  
     - Modifica Dati Veicolo[by dag7dev]  
       
