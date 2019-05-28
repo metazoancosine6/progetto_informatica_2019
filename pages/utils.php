@@ -33,10 +33,14 @@ function createNavBar() {
 		// amministrazione
 		case 3:
 			echo "<a href='RegistraMeccanico.php'> " . "Registra Meccanico" . "</a>";
+			
 			echo "<a href='modificaDatiMeccanico.php'> " . "Modifica Meccanico" . "</a>";
+			
 			echo "<a href='LicenziaMeccanico.php'> " . "Licenzia Meccanico" . "</a>";
 
 			echo "<a href='RegistraCliente.php'> " . "Registra Cliente" . "</a>";
+			
+			echo "<a href='cancellaCliente.php'> " . "Cancella Cliente" . "</a>";
 
 			echo "<a href='RegistraProdottoDb.php'> " . "Registra Prodotto Db" . "</a>";
 
