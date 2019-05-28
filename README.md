@@ -20,7 +20,9 @@ Lista delle cose da fare:
 Pagine mancanti:  
   Utenza Amministratore  
     ✅ Modifica Dati Meccanico[by GP]  
-    - Modifica Prodotto[by LC]  
+    - Modifica Prodotto[by GP]  
+    - Cancella Prodotto[by LC]  
+
     - Modifica Cliente[by CM]  
     - Cancella Cliente[by dag7dev]  
   Utenza Meccanico  
