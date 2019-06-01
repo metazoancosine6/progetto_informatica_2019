@@ -11,7 +11,7 @@
             <?php
                 include("utils.php");
                 session_start();
-                //checkAdminPermissions();
+                checkAdminPermissions();
                 createNavBar();
             ?>
         </div>
@@ -62,7 +62,7 @@
 					if(!$ris){
 						echo "query error";
 					}else{
-						echo "<center><h3>inserimento eseguito con successo</h3></center>";
+						echo "<h3>inserimento eseguito con successo</h3>";
 					}
 				}
 
