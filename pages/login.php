@@ -50,21 +50,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $privilegio = $_POST['privilegi'];
     
     //implementare nel database 
     switch ($privilegio) {
         case 1:
-            $query = "SELECT * FROM registrazione WHERE username='$username' AND password='$password'";    
+            $query = "SELECT * FROM registrazione WHERE username='$username' AND password='$password' AND stato=1";    
             break;
         
         case 2:
-            $query = "SELECT * FROM meccanico WHERE matricola='$username' AND pass_meccanico='$password'";    
+            $query = "SELECT * FROM meccanico WHERE matricola='$username' AND pass_meccanico='$password' AND stato=1";
             break;
         
         case 3:
-            $query = "SELECT * FROM amministratore WHERE username='$username' AND password='$password'";    
+            $query = "SELECT * FROM amministratore WHERE username='$username' AND password='$password' AND stato=1";    
             break;
     }
     
