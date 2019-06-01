@@ -20,10 +20,11 @@ Lista delle cose da fare:
 Pagine mancanti:  
   Utenza Amministratore  
     ✅ Modifica Dati Meccanico[by GP]  
+    ✅ Licenzia Meccanico[by LC]
     - Modifica Prodotto[by GP]  
-    - Cancella Prodotto[by LC]  
-    - Modifica Cliente[by CM]  
-    - Cancella Cliente[by CM]  
+    - Modifica Cliente[by CM]
+    - Cancella Cliente[by LC]    
+    
   Utenza Meccanico  
     - Modifica Dati Veicolo[by dag7dev]  
       
@@ -32,6 +33,7 @@ Pagine mancanti:
   
 pagine cancellati:  
 - Cancella Veicolo(Non la facciamo un veicolo è lì e basta, comporterebbe perdita di dati sulle fatture e il resto)
+- Cancella Prodotto(non la facciamo se ci chiedono perchè, aggiungi colonna stato=0 e modifica la query nell'insert perchè il prodotto non è più disponibile e quindi non va considerato, stato=1 dunque)
 
 progetti futuri:  
   - bootstrap per css   
