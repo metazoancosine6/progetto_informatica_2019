@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Creato il: Giu 01, 2019 alle 13:00
--- Versione del server: 10.1.37-MariaDB
--- Versione PHP: 5.6.39
+-- Host: localhost
+-- Generation Time: Jun 01, 2019 at 01:21 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `amministratore`
+-- Table structure for table `amministratore`
 --
 
 CREATE TABLE `amministratore` (
@@ -38,16 +38,16 @@ CREATE TABLE `amministratore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `amministratore`
+-- Dumping data for table `amministratore`
 --
 
 INSERT INTO `amministratore` (`idAmministratore`, `username`, `password`, `nome`, `cognome`, `stato`) VALUES
-(1, 'D', '8277e0910d750195b448797616e091ad', '???', '???', 1);
+(1, 'admin', '8277e0910d750195b448797616e091ad', '???', '???', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `anagrafica_intervento`
+-- Table structure for table `anagrafica_intervento`
 --
 
 CREATE TABLE `anagrafica_intervento` (
@@ -58,7 +58,7 @@ CREATE TABLE `anagrafica_intervento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `anagrafica_intervento`
+-- Dumping data for table `anagrafica_intervento`
 --
 
 INSERT INTO `anagrafica_intervento` (`id_anagrafico`, `nome_intervento`, `costo_intervento`, `tempo_lavorazione`) VALUES
@@ -76,7 +76,7 @@ INSERT INTO `anagrafica_intervento` (`id_anagrafico`, `nome_intervento`, `costo_
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -93,7 +93,7 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `data_nascita`, `cod_fisc`, `cognome`, `nome`, `cap`, `via`, `civico`, `telefono`, `email`) VALUES
@@ -202,7 +202,7 @@ INSERT INTO `cliente` (`id_cliente`, `data_nascita`, `cod_fisc`, `cognome`, `nom
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `effettuare`
+-- Table structure for table `effettuare`
 --
 
 CREATE TABLE `effettuare` (
@@ -211,7 +211,7 @@ CREATE TABLE `effettuare` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `effettuare`
+-- Dumping data for table `effettuare`
 --
 
 INSERT INTO `effettuare` (`fk_id_intervento`, `fk_id_meccanico`) VALUES
@@ -286,7 +286,7 @@ INSERT INTO `effettuare` (`fk_id_intervento`, `fk_id_meccanico`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `fattura`
+-- Table structure for table `fattura`
 --
 
 CREATE TABLE `fattura` (
@@ -298,7 +298,7 @@ CREATE TABLE `fattura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `fattura`
+-- Dumping data for table `fattura`
 --
 
 INSERT INTO `fattura` (`id_fattura`, `data_emissione`, `imponibile`, `imposta`, `fk_id_operazione`) VALUES
@@ -406,7 +406,7 @@ INSERT INTO `fattura` (`id_fattura`, `data_emissione`, `imponibile`, `imposta`, 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `intervento`
+-- Table structure for table `intervento`
 --
 
 CREATE TABLE `intervento` (
@@ -417,7 +417,7 @@ CREATE TABLE `intervento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `intervento`
+-- Dumping data for table `intervento`
 --
 
 INSERT INTO `intervento` (`id_intervento`, `descrizione`, `fk_id_operazione`, `fk_id_anagrafico`) VALUES
@@ -526,7 +526,7 @@ INSERT INTO `intervento` (`id_intervento`, `descrizione`, `fk_id_operazione`, `f
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `meccanico`
+-- Table structure for table `meccanico`
 --
 
 CREATE TABLE `meccanico` (
@@ -539,87 +539,87 @@ CREATE TABLE `meccanico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `meccanico`
+-- Dumping data for table `meccanico`
 --
 
 INSERT INTO `meccanico` (`id_meccanico`, `matricola`, `nome_m`, `cognome_m`, `pass_meccanico`, `stato`) VALUES
-(5, '84RDY2EH4', 'Sara', 'Melli', 'd41d8cd98f00b204e980', 1),
-(6, '88SVH2LK1', 'Giuseppe', 'De Santis', 'a', 1),
-(8, '61QCT9WY7', 'Marco', 'Leone', 'a', 1),
-(12, '55XUN2AT3', 'Giuseppe', 'Pepe', 'a', 1),
-(13, '63SVG3GQ2', 'Gaia', 'Fabbri', 'a', 1),
-(14, '60YRA8CQ9', 'Elisa', 'Orlando', 'a', 1),
-(15, '67MRR3BU9', 'Cristina', 'Marchi', 'a', 1),
-(18, '55FLS4LA8', 'Elena', 'Pastore', 'a', 1),
-(19, '64BCC3UW9', 'Alessio', 'Fusco', 'a', 1),
-(20, '52SXE4ZR4', 'Valeria', 'Poli', 'a', 1),
-(21, '59CLX2VU8', 'Irene', 'Monaco', 'a', 1),
-(22, '72OKP7KU5', 'Alessandra', 'Ferretti', 'a', 1),
-(23, '76HOU6OR4', 'Noemi', 'Palumbo', 'a', 1),
-(25, '45AIZ4PR4', 'Paola', 'Agostini', 'a', 1),
-(26, '72SUR5AE5', 'Manuela', 'Olivieri', 'a', 1),
-(27, '52FRW1TB0', 'Erica', 'Franco', 'a', 1),
-(29, '23ZZL3MJ3', 'Nicolò', 'Pellegrini', 'a', 1),
-(30, '59RQI3WR6', 'Samuele', 'Fontana', 'a', 1),
-(31, '45SLH8TI3', 'Filippo', 'Sartori', 'a', 1),
-(32, '23IBA7HR9', 'Lucio', 'Costa', 'a', 1),
-(33, '86IZT4VZ1', 'Simona', 'Marchetti', 'a', 1),
-(34, '78LQR3GU7', 'Gabriele', 'Olivieri', 'a', 1),
-(35, '95STP8GM9', 'Erica', 'Proietti', 'a', 1),
-(37, '95SHX1TH9', 'Erica', 'Ruggiero', 'a', 1),
-(38, '38RLF4YJ6', 'Elena', 'Donati', 'a', 1),
-(39, '28DHB0DZ5', 'Giulio', 'Basile', 'a', 1),
-(40, '61BPJ6SP2', 'Roberta', 'Vitali', 'a', 1),
-(42, '39AWZ8MR0', 'Giulio', 'Marchetti', 'a', 1),
-(43, '64RUA0JA0', 'Giulio', 'Guidi', 'a', 1),
-(44, '61KJU2IL5', 'Edoardo', 'Romano', 'a', 1),
-(45, '83ZHT8GR9', 'Laura', 'Sanna', 'a', 1),
-(48, '74ZUD4QK2', 'Emma', 'Volpe', 'a', 1),
-(49, '94FPA7NT5', 'Stefano', 'Monaco', 'a', 1),
-(51, '96IVV0DU9', 'Armando', 'Bianchi', 'a', 1),
-(52, '52TXZ5ZS5', 'Gaia', 'Coppola', 'a', 1),
-(53, '82NNL8UO8', 'Valeria', 'Costantini', 'a', 1),
-(54, '45BOO9QV0', 'Lisa', 'Piazza', 'a', 1),
-(55, '43QVD4XK0', 'Lorenzo', 'Messina', 'a', 1),
-(56, '41JLA6SP5', 'Lisa', 'Marino', 'a', 1),
-(58, '88WCP8SI3', 'Vincenzo', 'Rossi', 'a', 1),
-(60, '42KCR7FX8', 'Serena', 'Palmieri', 'a', 1),
-(61, '52FNE7YG5', 'Nicoletta', 'Pozzi', 'a', 1),
-(63, '32KLT9NW4', 'Manuela', 'Vitali', 'a', 1),
-(64, '97PSX1IJ3', 'Alessia', 'Gatti', 'a', 1),
-(65, '65ZNN6UR9', 'Samuele', 'Conte', 'a', 1),
-(66, '53QBX3EH4', 'Erica', 'Moro', 'a', 1),
-(67, '74SUP5YQ2', 'Viola', 'Bianco', 'a', 1),
-(70, '24WYE2VG5', 'Lucia', 'Albanese', 'a', 1),
-(71, '95UVA0WJ3', 'Augusto', 'Caruso', 'a', 1),
-(72, '31WFY3YV2', 'Nicola', 'Ferrara', 'a', 1),
-(73, '36GYB6NZ5', 'Alessio', 'Rossi', 'a', 1),
-(75, '47NNB1SB5', 'Armando', 'Russo', 'a', 1),
-(76, '57XLI7HB3', 'Sofia', 'Messina', 'a', 1),
-(79, '75GUG0AT8', 'Mattia', 'Lombardo', 'a', 1),
-(80, '26GOK6DX8', 'Silvia', 'Ruggiero', 'a', 1),
-(81, '45VOH2EJ7', 'Leonardo', 'Silvestri', 'a', 1),
-(82, '24ANO4WA8', 'Paola', 'Carbone', 'a', 1),
-(83, '21RIJ1QP7', 'Arianna', 'Proietti', 'a', 1),
-(84, '63OEP2BR6', 'Alessandro', 'Monti', 'a', 1),
-(88, '93JOU2KC9', 'Giulietta', 'Bianco', 'a', 1),
-(89, '60EFE6MU1', 'Martina', 'Ferri', 'a', 1),
-(90, '27MCL8NC9', 'Nicolò', 'Messina', 'a', 1),
-(91, '85YBR0PQ3', 'Giorgia', 'Pellegrino', 'a', 1),
-(92, '62GDT9DQ1', 'Davide', 'Battaglia', 'a', 1),
-(93, '94HWK1JS3', 'Nicole', 'Rossi', 'a', 1),
-(94, '22ZHW7IW8', 'Beatrice', 'Castelli', 'a', 1),
-(95, '44OHC6HO4', 'Mirko', 'Bianco', 'a', 1),
-(96, '33LYC6MC9', 'Alessandra', 'Bruno', 'a', 1),
-(97, '27DQA0JI0', 'Domenico', 'Bernardi', 'a', 1),
-(98, '70PMM2ZO5', 'Edoardo', 'Piazza', 'a', 1),
-(99, '78BDD4YY6', 'Marco', 'Cavallo', 'a', 1),
-(100, '46HQC9UA5', 'Laura', 'Messina', 'a', 1);
+(5, 'meccanico', 'Sara', 'Melli', '0cc175b9c0f1b6a831c399e269772661', 1),
+(6, '88SVH2LK1', 'Giuseppe', 'De Santis', '0cc175b9c0f1b6a831c399e269772661', 1),
+(8, '61QCT9WY7', 'Marco', 'Leone', '0cc175b9c0f1b6a831c399e269772661', 1),
+(12, '55XUN2AT3', 'Giuseppe', 'Pepe', '0cc175b9c0f1b6a831c399e269772661', 1),
+(13, '63SVG3GQ2', 'Gaia', 'Fabbri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(14, '60YRA8CQ9', 'Elisa', 'Orlando', '0cc175b9c0f1b6a831c399e269772661', 1),
+(15, '67MRR3BU9', 'Cristina', 'Marchi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(18, '55FLS4LA8', 'Elena', 'Pastore', '0cc175b9c0f1b6a831c399e269772661', 1),
+(19, '64BCC3UW9', 'Alessio', 'Fusco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(20, '52SXE4ZR4', 'Valeria', 'Poli', '0cc175b9c0f1b6a831c399e269772661', 1),
+(21, '59CLX2VU8', 'Irene', 'Monaco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(22, '72OKP7KU5', 'Alessandra', 'Ferretti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(23, '76HOU6OR4', 'Noemi', 'Palumbo', '0cc175b9c0f1b6a831c399e269772661', 1),
+(25, '45AIZ4PR4', 'Paola', 'Agostini', '0cc175b9c0f1b6a831c399e269772661', 1),
+(26, '72SUR5AE5', 'Manuela', 'Olivieri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(27, '52FRW1TB0', 'Erica', 'Franco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(29, '23ZZL3MJ3', 'Nicolò', 'Pellegrini', '0cc175b9c0f1b6a831c399e269772661', 1),
+(30, '59RQI3WR6', 'Samuele', 'Fontana', '0cc175b9c0f1b6a831c399e269772661', 1),
+(31, '45SLH8TI3', 'Filippo', 'Sartori', '0cc175b9c0f1b6a831c399e269772661', 1),
+(32, '23IBA7HR9', 'Lucio', 'Costa', '0cc175b9c0f1b6a831c399e269772661', 1),
+(33, '86IZT4VZ1', 'Simona', 'Marchetti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(34, '78LQR3GU7', 'Gabriele', 'Olivieri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(35, '95STP8GM9', 'Erica', 'Proietti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(37, '95SHX1TH9', 'Erica', 'Ruggiero', '0cc175b9c0f1b6a831c399e269772661', 1),
+(38, '38RLF4YJ6', 'Elena', 'Donati', '0cc175b9c0f1b6a831c399e269772661', 1),
+(39, '28DHB0DZ5', 'Giulio', 'Basile', '0cc175b9c0f1b6a831c399e269772661', 1),
+(40, '61BPJ6SP2', 'Roberta', 'Vitali', '0cc175b9c0f1b6a831c399e269772661', 1),
+(42, '39AWZ8MR0', 'Giulio', 'Marchetti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(43, '64RUA0JA0', 'Giulio', 'Guidi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(44, '61KJU2IL5', 'Edoardo', 'Romano', '0cc175b9c0f1b6a831c399e269772661', 1),
+(45, '83ZHT8GR9', 'Laura', 'Sanna', '0cc175b9c0f1b6a831c399e269772661', 1),
+(48, '74ZUD4QK2', 'Emma', 'Volpe', '0cc175b9c0f1b6a831c399e269772661', 1),
+(49, '94FPA7NT5', 'Stefano', 'Monaco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(51, '96IVV0DU9', 'Armando', 'Bianchi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(52, '52TXZ5ZS5', 'Gaia', 'Coppola', '0cc175b9c0f1b6a831c399e269772661', 1),
+(53, '82NNL8UO8', 'Valeria', 'Costantini', '0cc175b9c0f1b6a831c399e269772661', 1),
+(54, '45BOO9QV0', 'Lisa', 'Piazza', '0cc175b9c0f1b6a831c399e269772661', 1),
+(55, '43QVD4XK0', 'Lorenzo', 'Messina', '0cc175b9c0f1b6a831c399e269772661', 1),
+(56, '41JLA6SP5', 'Lisa', 'Marino', '0cc175b9c0f1b6a831c399e269772661', 1),
+(58, '88WCP8SI3', 'Vincenzo', 'Rossi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(60, '42KCR7FX8', 'Serena', 'Palmieri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(61, '52FNE7YG5', 'Nicoletta', 'Pozzi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(63, '32KLT9NW4', 'Manuela', 'Vitali', '0cc175b9c0f1b6a831c399e269772661', 1),
+(64, '97PSX1IJ3', 'Alessia', 'Gatti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(65, '65ZNN6UR9', 'Samuele', 'Conte', '0cc175b9c0f1b6a831c399e269772661', 1),
+(66, '53QBX3EH4', 'Erica', 'Moro', '0cc175b9c0f1b6a831c399e269772661', 1),
+(67, '74SUP5YQ2', 'Viola', 'Bianco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(70, '24WYE2VG5', 'Lucia', 'Albanese', '0cc175b9c0f1b6a831c399e269772661', 1),
+(71, '95UVA0WJ3', 'Augusto', 'Caruso', '0cc175b9c0f1b6a831c399e269772661', 1),
+(72, '31WFY3YV2', 'Nicola', 'Ferrara', '0cc175b9c0f1b6a831c399e269772661', 1),
+(73, '36GYB6NZ5', 'Alessio', 'Rossi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(75, '47NNB1SB5', 'Armando', 'Russo', '0cc175b9c0f1b6a831c399e269772661', 1),
+(76, '57XLI7HB3', 'Sofia', 'Messina', '0cc175b9c0f1b6a831c399e269772661', 1),
+(79, '75GUG0AT8', 'Mattia', 'Lombardo', '0cc175b9c0f1b6a831c399e269772661', 1),
+(80, '26GOK6DX8', 'Silvia', 'Ruggiero', '0cc175b9c0f1b6a831c399e269772661', 1),
+(81, '45VOH2EJ7', 'Leonardo', 'Silvestri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(82, '24ANO4WA8', 'Paola', 'Carbone', '0cc175b9c0f1b6a831c399e269772661', 1),
+(83, '21RIJ1QP7', 'Arianna', 'Proietti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(84, '63OEP2BR6', 'Alessandro', 'Monti', '0cc175b9c0f1b6a831c399e269772661', 1),
+(88, '93JOU2KC9', 'Giulietta', 'Bianco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(89, '60EFE6MU1', 'Martina', 'Ferri', '0cc175b9c0f1b6a831c399e269772661', 1),
+(90, '27MCL8NC9', 'Nicolò', 'Messina', '0cc175b9c0f1b6a831c399e269772661', 1),
+(91, '85YBR0PQ3', 'Giorgia', 'Pellegrino', '0cc175b9c0f1b6a831c399e269772661', 1),
+(92, '62GDT9DQ1', 'Davide', 'Battaglia', '0cc175b9c0f1b6a831c399e269772661', 1),
+(93, '94HWK1JS3', 'Nicole', 'Rossi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(94, '22ZHW7IW8', 'Beatrice', 'Castelli', '0cc175b9c0f1b6a831c399e269772661', 1),
+(95, '44OHC6HO4', 'Mirko', 'Bianco', '0cc175b9c0f1b6a831c399e269772661', 1),
+(96, '33LYC6MC9', 'Alessandra', 'Bruno', '0cc175b9c0f1b6a831c399e269772661', 1),
+(97, '27DQA0JI0', 'Domenico', 'Bernardi', '0cc175b9c0f1b6a831c399e269772661', 1),
+(98, '70PMM2ZO5', 'Edoardo', 'Piazza', '0cc175b9c0f1b6a831c399e269772661', 1),
+(99, '78BDD4YY6', 'Marco', 'Cavallo', '0cc175b9c0f1b6a831c399e269772661', 1),
+(100, '46HQC9UA5', 'Laura', 'Messina', '0cc175b9c0f1b6a831c399e269772661', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `operazione`
+-- Table structure for table `operazione`
 --
 
 CREATE TABLE `operazione` (
@@ -631,7 +631,7 @@ CREATE TABLE `operazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `operazione`
+-- Dumping data for table `operazione`
 --
 
 INSERT INTO `operazione` (`id_operazione`, `data_inizio`, `data_fine_prevista`, `data_riconsegna_effettiva`, `fk_id_veicolo`) VALUES
@@ -739,7 +739,7 @@ INSERT INTO `operazione` (`id_operazione`, `data_inizio`, `data_fine_prevista`, 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `prodotto`
+-- Table structure for table `prodotto`
 --
 
 CREATE TABLE `prodotto` (
@@ -751,7 +751,7 @@ CREATE TABLE `prodotto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `prodotto`
+-- Dumping data for table `prodotto`
 --
 
 INSERT INTO `prodotto` (`id_prodotto`, `nome_prod`, `costo_unitario`, `aliquota_iva`, `categoria`) VALUES
@@ -767,7 +767,7 @@ INSERT INTO `prodotto` (`id_prodotto`, `nome_prod`, `costo_unitario`, `aliquota_
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `registrazione`
+-- Table structure for table `registrazione`
 --
 
 CREATE TABLE `registrazione` (
@@ -778,30 +778,30 @@ CREATE TABLE `registrazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `registrazione`
+-- Dumping data for table `registrazione`
 --
 
 INSERT INTO `registrazione` (`fk_id_cliente`, `username`, `password`, `stato_reg`) VALUES
-(201, 'aa', 'aa', 1),
-(202, 'rr3gfregv', 'bhbte dnb', 1),
-(206, 'cevewv', 'evwv', 1),
-(216, 'wvrwv', 'vewvv', 1),
-(218, 'aq3<klutklut', 'lutld,u ', 1),
-(234, 'geqhTE', 'NRYH T73I 7KJ6E', 1),
-(241, 'etrnhtententen', 'tenetrhnteaq<KJE3', 1),
-(243, 'EFHNATREM', 'JNQTE', 1),
-(250, 'rwbrwb', 'rw', 1),
-(271, 'ew', 'bwrbrw', 1),
-(272, 'wgvwrebrw', 'brewbrewbvrew', 1),
-(274, 'wwrgbwrbw', 'ETRKJMAYTRN', 1),
-(278, 'ITLòIàIU', 'òIòTòI', 1),
-(282, 'SJTREJNGDZHFDRG', 'HRWHREGVD', 1),
-(291, 'WEYHTRSJ<', 'ZTRJE', 1);
+(201, 'cliente', '0cc175b9c0f1b6a831c399e269772661', 1),
+(202, 'rr3gfregv', '0cc175b9c0f1b6a831c399e269772661', 1),
+(206, 'cevewv', '0cc175b9c0f1b6a831c399e269772661', 1),
+(216, 'wvrwv', '0cc175b9c0f1b6a831c399e269772661', 1),
+(218, 'aq3<klutklut', '0cc175b9c0f1b6a831c399e269772661', 1),
+(234, 'geqhTE', '0cc175b9c0f1b6a831c399e269772661', 1),
+(241, 'etrnhtententen', '0cc175b9c0f1b6a831c399e269772661', 1),
+(243, 'EFHNATREM', '0cc175b9c0f1b6a831c399e269772661', 1),
+(250, 'rwbrwb', '0cc175b9c0f1b6a831c399e269772661', 1),
+(271, 'ew', '0cc175b9c0f1b6a831c399e269772661', 1),
+(272, 'wgvwrebrw', '0cc175b9c0f1b6a831c399e269772661', 1),
+(274, 'wwrgbwrbw', '0cc175b9c0f1b6a831c399e269772661', 1),
+(278, 'ITLòIàIU', '0cc175b9c0f1b6a831c399e269772661', 1),
+(282, 'SJTREJNGDZHFDRG', '0cc175b9c0f1b6a831c399e269772661', 1),
+(291, 'WEYHTRSJ<', '0cc175b9c0f1b6a831c399e269772661', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `utilizzo`
+-- Table structure for table `utilizzo`
 --
 
 CREATE TABLE `utilizzo` (
@@ -811,7 +811,7 @@ CREATE TABLE `utilizzo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `utilizzo`
+-- Dumping data for table `utilizzo`
 --
 
 INSERT INTO `utilizzo` (`fk_id_intervento`, `fk_id_prodotto`, `quantita`) VALUES
@@ -919,7 +919,7 @@ INSERT INTO `utilizzo` (`fk_id_intervento`, `fk_id_prodotto`, `quantita`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `veicolo`
+-- Table structure for table `veicolo`
 --
 
 CREATE TABLE `veicolo` (
@@ -933,7 +933,7 @@ CREATE TABLE `veicolo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dump dei dati per la tabella `veicolo`
+-- Dumping data for table `veicolo`
 --
 
 INSERT INTO `veicolo` (`id_veicolo`, `nomeV`, `targa`, `tipo`, `cavalli`, `cilindrata`, `fk_id_cliente`) VALUES
@@ -1039,44 +1039,44 @@ INSERT INTO `veicolo` (`id_veicolo`, `nomeV`, `targa`, `tipo`, `cavalli`, `cilin
 (120, 'Lincoln', 'PH 056', 'Berlina', 10, 1065, 216);
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `amministratore`
+-- Indexes for table `amministratore`
 --
 ALTER TABLE `amministratore`
   ADD PRIMARY KEY (`idAmministratore`);
 
 --
--- Indici per le tabelle `anagrafica_intervento`
+-- Indexes for table `anagrafica_intervento`
 --
 ALTER TABLE `anagrafica_intervento`
   ADD PRIMARY KEY (`id_anagrafico`);
 
 --
--- Indici per le tabelle `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
   ADD UNIQUE KEY `telefono` (`telefono`,`email`);
 
 --
--- Indici per le tabelle `effettuare`
+-- Indexes for table `effettuare`
 --
 ALTER TABLE `effettuare`
   ADD KEY `fk_id_intervento` (`fk_id_intervento`),
   ADD KEY `fk_id_meccanico` (`fk_id_meccanico`);
 
 --
--- Indici per le tabelle `fattura`
+-- Indexes for table `fattura`
 --
 ALTER TABLE `fattura`
   ADD PRIMARY KEY (`id_fattura`),
   ADD KEY `fk_id_operazione` (`fk_id_operazione`);
 
 --
--- Indici per le tabelle `intervento`
+-- Indexes for table `intervento`
 --
 ALTER TABLE `intervento`
   ADD PRIMARY KEY (`id_intervento`),
@@ -1084,27 +1084,27 @@ ALTER TABLE `intervento`
   ADD KEY `fd_id_anagrafico` (`fk_id_anagrafico`);
 
 --
--- Indici per le tabelle `meccanico`
+-- Indexes for table `meccanico`
 --
 ALTER TABLE `meccanico`
   ADD PRIMARY KEY (`id_meccanico`),
   ADD UNIQUE KEY `matricola` (`matricola`);
 
 --
--- Indici per le tabelle `operazione`
+-- Indexes for table `operazione`
 --
 ALTER TABLE `operazione`
   ADD PRIMARY KEY (`id_operazione`),
   ADD KEY `fk_id_veicolo` (`fk_id_veicolo`);
 
 --
--- Indici per le tabelle `prodotto`
+-- Indexes for table `prodotto`
 --
 ALTER TABLE `prodotto`
   ADD PRIMARY KEY (`id_prodotto`);
 
 --
--- Indici per le tabelle `registrazione`
+-- Indexes for table `registrazione`
 --
 ALTER TABLE `registrazione`
   ADD PRIMARY KEY (`fk_id_cliente`),
@@ -1112,14 +1112,14 @@ ALTER TABLE `registrazione`
   ADD KEY `fk_id_cliente` (`fk_id_cliente`);
 
 --
--- Indici per le tabelle `utilizzo`
+-- Indexes for table `utilizzo`
 --
 ALTER TABLE `utilizzo`
   ADD KEY `fk_id_intervento` (`fk_id_intervento`),
   ADD KEY `fk_id_prodotto` (`fk_id_prodotto`);
 
 --
--- Indici per le tabelle `veicolo`
+-- Indexes for table `veicolo`
 --
 ALTER TABLE `veicolo`
   ADD PRIMARY KEY (`id_veicolo`),
@@ -1127,108 +1127,108 @@ ALTER TABLE `veicolo`
   ADD KEY `fk_id_cliente` (`fk_id_cliente`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `amministratore`
+-- AUTO_INCREMENT for table `amministratore`
 --
 ALTER TABLE `amministratore`
   MODIFY `idAmministratore` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT per la tabella `anagrafica_intervento`
+-- AUTO_INCREMENT for table `anagrafica_intervento`
 --
 ALTER TABLE `anagrafica_intervento`
   MODIFY `id_anagrafico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT per la tabella `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=302;
 
 --
--- AUTO_INCREMENT per la tabella `fattura`
+-- AUTO_INCREMENT for table `fattura`
 --
 ALTER TABLE `fattura`
   MODIFY `id_fattura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
 
 --
--- AUTO_INCREMENT per la tabella `intervento`
+-- AUTO_INCREMENT for table `intervento`
 --
 ALTER TABLE `intervento`
   MODIFY `id_intervento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT per la tabella `meccanico`
+-- AUTO_INCREMENT for table `meccanico`
 --
 ALTER TABLE `meccanico`
   MODIFY `id_meccanico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT per la tabella `operazione`
+-- AUTO_INCREMENT for table `operazione`
 --
 ALTER TABLE `operazione`
   MODIFY `id_operazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT per la tabella `prodotto`
+-- AUTO_INCREMENT for table `prodotto`
 --
 ALTER TABLE `prodotto`
   MODIFY `id_prodotto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT per la tabella `veicolo`
+-- AUTO_INCREMENT for table `veicolo`
 --
 ALTER TABLE `veicolo`
   MODIFY `id_veicolo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `effettuare`
+-- Constraints for table `effettuare`
 --
 ALTER TABLE `effettuare`
   ADD CONSTRAINT `effettuare_ibfk_1` FOREIGN KEY (`fk_id_intervento`) REFERENCES `intervento` (`id_intervento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `effettuare_ibfk_2` FOREIGN KEY (`fk_id_meccanico`) REFERENCES `meccanico` (`id_meccanico`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `fattura`
+-- Constraints for table `fattura`
 --
 ALTER TABLE `fattura`
   ADD CONSTRAINT `fattura_ibfk_1` FOREIGN KEY (`fk_id_operazione`) REFERENCES `operazione` (`id_operazione`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limiti per la tabella `intervento`
+-- Constraints for table `intervento`
 --
 ALTER TABLE `intervento`
   ADD CONSTRAINT `intervento_ibfk_1` FOREIGN KEY (`fk_id_operazione`) REFERENCES `operazione` (`id_operazione`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `intervento_ibfk_2` FOREIGN KEY (`fk_id_anagrafico`) REFERENCES `anagrafica_intervento` (`id_anagrafico`) ON DELETE NO ACTION;
 
 --
--- Limiti per la tabella `operazione`
+-- Constraints for table `operazione`
 --
 ALTER TABLE `operazione`
   ADD CONSTRAINT `operazione_ibfk_1` FOREIGN KEY (`fk_id_veicolo`) REFERENCES `veicolo` (`id_veicolo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limiti per la tabella `registrazione`
+-- Constraints for table `registrazione`
 --
 ALTER TABLE `registrazione`
   ADD CONSTRAINT `registrazione_ibfk_1` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Limiti per la tabella `utilizzo`
+-- Constraints for table `utilizzo`
 --
 ALTER TABLE `utilizzo`
   ADD CONSTRAINT `utilizzo_ibfk_1` FOREIGN KEY (`fk_id_intervento`) REFERENCES `intervento` (`id_intervento`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `utilizzo_ibfk_2` FOREIGN KEY (`fk_id_prodotto`) REFERENCES `prodotto` (`id_prodotto`);
 
 --
--- Limiti per la tabella `veicolo`
+-- Constraints for table `veicolo`
 --
 ALTER TABLE `veicolo`
   ADD CONSTRAINT `veicolo_ibfk_1` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
