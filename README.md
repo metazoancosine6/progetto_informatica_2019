@@ -28,7 +28,7 @@ Pagine mancanti:
     - Modifica Dati Veicolo[by dag7dev]  
       
   Utenza Cliente  
-    - Visualizza macchina/e (Dati riguardanti operazioni ed interventi, e le fatture)  
+    ✅ Visualizza fatture e lista veicoli
   
 pagine cancellati:  
 - Cancella Veicolo(Non la facciamo un veicolo è lì e basta, comporterebbe perdita di dati sulle fatture e il resto)
