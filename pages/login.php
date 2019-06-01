@@ -70,19 +70,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 
-    echo $query;
-    
-    $rSet = execute($myconn, $query);
+    $rSet = $myconn->query($query);
     
     if (isset($_POST["login"])) {
-        if ($rSet == null) {
-
-            echo "login fallito!";
+        if ($rSet->num_rows == 0) {
+        	echo "login fallito!";
             
             header("Refresh:0; url=AccessoNegato.php");
             
         } else {
+        	// questo mi serve per salvarmi il mio id nel cookie di sessione
+        	// che poi potra' essere utilizzato.
+        	
+        	// nel caso del cliente, per identificare il cliente e stampare le
+        	// fatture associate
 
+        	$row = $rSet -> fetch_assoc();
+        	$arrKey = array_keys($row);
+       
+        	switch ($arrKey[0]) {
+        		case "fk_id_cliente":
+        			$_SESSION["id"] = $row['fk_id_cliente'];
+        			break;
+        		
+        		case "id_meccanico":
+        			$_SESSION["id"] = $row['id_meccanico'];
+        			break;
+
+        		case "idAmministratore":
+        			$_SESSION["id"] = $row['idAmministratore'];
+        			break;
+        	}
+
+  	
             $_SESSION["username"] = $username;
             $_SESSION['privilegi'] = $privilegio;
             
