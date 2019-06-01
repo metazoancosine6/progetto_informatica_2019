@@ -47,7 +47,7 @@
 						$via=$_POST["via"];
 						$civ=$_POST["civ"];
 						$cap=$_POST["cap"];
-						$pass=$_POST["pass"];
+						$pass=md5($_POST["pass"]);
 						$email=$_POST["mail"];
 					}else{}
 					$myconn=connect();
