@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //implementare nel database 
     switch ($privilegio) {
         case 1:
-            $query = "SELECT * FROM registrazione WHERE username='$username' AND password='$password' AND stato=1";    
+            $query = "SELECT * FROM registrazione WHERE username='$username' AND password='$password' AND stato_reg=1";    
             break;
         
         case 2:
@@ -66,7 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 3:
             $query = "SELECT * FROM amministratore WHERE username='$username' AND password='$password' AND stato=1";    
             break;
+
+
     }
+
+    echo $query;
     
     $rSet = execute($myconn, $query);
     
@@ -76,8 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "login fallito!";
             
             header("Refresh:0; url=AccessoNegato.php");
-            //header("Refresh:0");
-            //showQueryTable($rSet);
+            
         } else {
 
             $_SESSION["username"] = $username;
