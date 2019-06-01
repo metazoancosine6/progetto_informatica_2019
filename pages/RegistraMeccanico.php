@@ -44,7 +44,7 @@
 						$matricola 	=	$_POST["matricola"];
 						$nome 		=	$_POST["nome"];
 						$cognome 	=	$_POST["cognome"];
-						$pass 		=	$_POST["pass"];
+						$pass 		=	md5($_POST["pass"]);
 					}
 					
 					$conn = connect();
