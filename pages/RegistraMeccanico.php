@@ -54,11 +54,11 @@
 					}
 					
 					$sql = 
-						"INSERT INTO meccanico (matricola, nome_m, cognome_m, pass_meccanico) VALUES(".
+						"INSERT INTO meccanico (matricola, nome_m, cognome_m, pass_meccanico,stato) VALUES(".
 						"\"". $matricola . "\"" . "," .
 						"\"". $nome . "\"". "," .
 						"\"". $cognome . "\"". "," .
-						"\"". $pass . "\"" . ");";
+						"\"". $pass . "\"" . ","."1".");";
 
 					// esegue query e vede se e' andata a buon fine
 					$ris = $conn -> query($sql);
